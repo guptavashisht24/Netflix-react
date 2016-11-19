@@ -2,7 +2,7 @@ import React from 'react';
 
 function Search(){
     return(
-        <input type="search" placeholder="Search for title"/>
+        <input type="search" className="Search" placeholder="Search for title"/>
     )
 }
 
