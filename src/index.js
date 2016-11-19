@@ -3,17 +3,13 @@
  */
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Navigation from './components/header/header.js';
-import Logo from './components/header/logo.js';
-import Search from './components/header/search.js';
+import Header from './components/header/header.js';
 import Banner from './components/banner/banner.js';
 
 const App = function(){
     return(
         <div>
-            <Logo />
-            <Navigation />
-            <Search />
+            <Header />
             <Banner />
         </div>
     );

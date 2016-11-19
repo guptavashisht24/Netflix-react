@@ -2,29 +2,18 @@
  * Created by Vijay on 11/17/16.
  */
 import React from 'react';
-
+import Logo from './logo.js';
+import Search from './search.js';
+import Navigation from './navigation.js';
 // Navigation
-function Navigation(){
+function Header(){
     return (
-        <div id="navigation" className="Navigation">
-            <nav>
-                 <ul>
-                    <li>
-                        <a href="#">Browse</a>
-                    </li>
-                    <li>
-                       <a href="#">My list</a>
-                    </li>
-                    <li>
-                      <a href="#">Top picks</a>
-                    </li>
-                     <li>
-                        <a href="#">Recent</a>
-                    </li>
-                </ul>
-            </nav>
-         </div>
+        <header className="Header">
+            <Logo />
+            <Navigation />
+            <Search />
+        </header>
 );
 }
 
-export default Navigation;
+export default Header;
