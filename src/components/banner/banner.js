@@ -1,5 +1,6 @@
 import React from 'react';
-import Button from '../button/button.js';
+import ButtonBlank from '../button/button-blank.js';
+import ButtonFull from '../button/button-full.js'
 
 class Banner extends React.Component{
     render(){
@@ -10,8 +11,8 @@ class Banner extends React.Component{
                     <h2>Season 2 now available</h2>
                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloremque id quam sapiente unde voluptatum alias vero debitis, magnam quis quod.</p>
                     <div className="button-wrapper">
-                    <Button buttonText="Join Now"/>
-                    <Button buttonText="another text"/>
+                    <ButtonBlank buttonText="Join Now"/>
+                    <ButtonBlank buttonText="another text"/>
                     </div>
                 </div>
                     <div className="overlay"></div>

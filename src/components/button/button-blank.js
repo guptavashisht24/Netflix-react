@@ -1,9 +1,9 @@
 import React from 'react';
 
-function Button(props){
+function ButtonBlank(props){
     return(
         <a href="#" className="Button">{props.buttonText}</a>
     )
 }
 
-export default Button;
+export default ButtonBlank;
