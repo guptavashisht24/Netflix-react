@@ -1,7 +1,6 @@
 # NetFlix Clone
 
 
-
 ###Getting Started###
 
 Getting started with this repo.
