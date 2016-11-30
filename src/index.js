@@ -5,6 +5,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import Header from './components/header/header.js';
 import Banner from './components/banner/banner.js';
+import TitleList from './components/list/title-list.js';
 
 
 const App = function(){
@@ -12,6 +13,7 @@ const App = function(){
         <div>
             <Header />
             <Banner />
+            <TitleList url="movie/top_rated"/>
         </div>
 
     );

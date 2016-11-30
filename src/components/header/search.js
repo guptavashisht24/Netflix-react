@@ -23,14 +23,7 @@ class Search extends React.Component{
             console.log("enter")
         }
     }
-
-    componentDidMount(){
-        if(this.props.url !==''){
-            this.loadContent();
-            this.setState({mounted:true});
-        }
-    }
-
+    
     render(){
         return (
                 <input type="text" className="Search" value={this.state.searchTerm} placeholder="Search for an item" onKeyUp={this.handleKeyUp.bind(this)} onChange={this.handleChange.bind(this)}/>
