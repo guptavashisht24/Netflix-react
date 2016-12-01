@@ -1,4 +1,5 @@
 import React from 'react'
+import Item from "./title-list-item.js"
 
 class TitleList extends React.Component{
     apiKey='e6ca854fb1aff4f3fb6b40ee8720f51e';
@@ -35,16 +36,34 @@ class TitleList extends React.Component{
     render(){
             var results = '';
             if(this.state.data){
-                console.log("found state")
-                results = this.state.data.map(function(results){
-                    console.log(results.vote_average)
+                results = this.state.data.map(function(videoDetail,i){
+                    var backDrop;
+                    var name;
+                    var description;
+                    var rating;
+                    if(i<5){
+                        backDrop = 'http://image.tmdb.org/t/p/original' + videoDetail.backdrop_path;
+                        description = videoDetail.overview;
+                        rating = videoDetail.vote_average
+                        if(!videoDetail.name){
+                            name = videoDetail.original_title
+                        }
+                        else{
+                            name = videoDetail.title
+                        }
+                        return <Item key={results.id} title = {name} plot = {description} backDrop = {backDrop} rating = {rating}/>
+                    }
+                    return <div key={results.id}></div>
                 })
             }
 
 
 
         return(
-            <h1>highest Rated</h1>
+            <div>
+                <h1>highest Rated</h1>
+                {results}
+             </div>
         );
     }
 }
