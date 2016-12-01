@@ -16,6 +16,7 @@ const App = function(){
             <TitleList title="Top Rated Movies"url="movie/top_rated"/>
             <TitleList title="Now Playing" url="movie/now_playing"/>
             <TitleList title="Upcoming Movies" url="movie/upcoming"/>
+            <TitleList title="Top Rated TV shows" url="tv/popular"/>
         </div>
 
     );

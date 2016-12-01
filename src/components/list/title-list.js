@@ -48,8 +48,11 @@ class TitleList extends React.Component{
                         if(!videoDetail.name){
                             name = videoDetail.original_title
                         }
-                        else{
+                        else if(videoDetail.title){
                             name = videoDetail.title
+                        }
+                        else{
+                            name = videoDetail.name;
                         }
                         return <Item key={results.id} title = {name} plot = {description} backDrop = {backDrop} rating = {rating}/>
                     }
