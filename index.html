@@ -315,6 +315,10 @@
         text-overflow: ellipsis;
         -webkit-transition: margin .25s ease .125s, opacity .25s ease .25s;
         transition: margin .25s ease .125s, opacity .25s ease .25s;
+        overflow: hidden;
+        display: -webkit-box;
+        -webkit-line-clamp: 3;
+        -webkit-box-orient: vertical;
       }
       .Item:hover {
         background-size: 150%;
