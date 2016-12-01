@@ -65,7 +65,7 @@ class TitleList extends React.Component{
         return(
             <div ref="titlecategory" className="TitleList">
                 <div className="Title">
-                    <h1>{this.props.title}</h1>
+                    <h2>{this.props.title}</h2>
                     <div className="titles-wrapper">
                         {results}
                     </div>
