@@ -60,10 +60,14 @@ class TitleList extends React.Component{
 
 
         return(
-            <div>
-                <h1>highest Rated</h1>
-                {results}
-             </div>
+            <div ref="titlecategory" className="TitleList">
+                <div className="Title">
+                    <h1>{this.props.title}</h1>
+                    <div className="titles-wrapper">
+                        {results}
+                    </div>
+                </div>
+            </div>
         );
     }
 }

@@ -13,7 +13,9 @@ const App = function(){
         <div>
             <Header />
             <Banner />
-            <TitleList url="movie/top_rated"/>
+            <TitleList title="Top Rated Movies"url="movie/top_rated"/>
+            <TitleList title="Now Playing" url="movie/now_playing"/>
+            <TitleList title="Now Playing" url="movie/now_playing"/>
         </div>
 
     );
