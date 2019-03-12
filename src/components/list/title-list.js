@@ -2,16 +2,14 @@ import React from 'react'
 import Item from "./title-list-item.js"
 
 class TitleList extends React.Component{
-    apiKey='e6ca854fb1aff4f3fb6b40ee8720f51e';
-
     constructor(props){
-        super();
+        super()
         this.state = {
             data: [],
             mounted:false
         };
+        this.apiKey='e6ca854fb1aff4f3fb6b40ee8720f51e'
     }
-
     componentDidMount(){
         if(this.props.url !==''){
             this.loadContent()
@@ -63,7 +61,7 @@ class TitleList extends React.Component{
 
 
         return(
-            <div ref="titlecategory" className="TitleList">
+            <div className="TitleList">
                 <div className="Title">
                     <h2>{this.props.title}</h2>
                     <div className="titles-wrapper">
