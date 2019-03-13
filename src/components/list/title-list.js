@@ -9,7 +9,7 @@ class TitleList extends React.Component{
             mounted:false
         };
         this.apiKey='e6ca854fb1aff4f3fb6b40ee8720f51e'
-    }
+    } 
     componentDidMount(){
         if(this.props.url !==''){
             this.loadContent()

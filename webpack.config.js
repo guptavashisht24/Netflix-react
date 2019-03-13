@@ -18,6 +18,11 @@ module.exports = {
         }
       },
       {
+        test: /.(js|jsx)$/,
+        exclude: /node_modules/,
+        use: ["babel-loader", "eslint-loader"],
+      },
+      {
         test: /.(css|scss)$/,
         use: [MiniCssExtractPlugin.loader, "css-loader", "sass-loader"]
       }
