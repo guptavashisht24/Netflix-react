@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types'
 import React from 'react';
 
 function ButtonBlank(props){
@@ -6,4 +7,7 @@ function ButtonBlank(props){
     )
 }
 
+ButtonBlank.propTypes = {
+  buttonText: PropTypes.string.isRequired,
+}
 export default ButtonBlank;

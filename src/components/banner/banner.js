@@ -6,13 +6,7 @@ import "./style.scss";
 class Banner extends React.Component {
   render() {
     return (
-      <div
-        id="hero"
-        className="Banner"
-        style={{
-          backgroundImage: "url(https://images.alphacoders.com/633/633643.jpg)"
-        }}
-      >
+      <div id="hero" className="Banner" style={{ backgroundImage: "url(https://images.alphacoders.com/633/633643.jpg)"}}>
         <div className="content">
           <img
             className="logo"
