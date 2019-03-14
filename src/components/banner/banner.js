@@ -1,6 +1,6 @@
 import React from "react";
 import ButtonBlank from "../button/button-blank.js";
-import ButtonFull from "../button/button-full.js";
+// import ButtonFull from "../button/button-full.js";
 import "./style.scss";
 
 class Banner extends React.Component {

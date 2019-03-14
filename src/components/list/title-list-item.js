@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types'
 import React from "react";
 
 function Item(props) {
@@ -12,4 +13,10 @@ function Item(props) {
   );
 }
 
+Item.propTypes = {
+  title: PropTypes.string,
+  backDrop: PropTypes.string,
+  rating: PropTypes.number,
+  plot: PropTypes.string
+}
 export default Item;
