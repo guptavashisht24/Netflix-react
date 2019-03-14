@@ -1,13 +1,16 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { createStore } from 'redux'
+import { applyMiddleware, createStore } from 'redux'
+import logger from 'redux-logger'
 import { Provider } from 'react-redux'
 import Header from './Components/header/header.js';
 import Banner from './Components/banner/banner.js';
 import TitleList from './Components/list/title-list.js';
-const App = () => {
+import reducer from './Reducers'
 
-  let store = createStore(() => {}, {})
+const App = () => {
+  let store = createStore(reducer, applyMiddleware(logger))
+  store.dispatch({type:'ADD'})
   return (
     <Provider store = {store}>
       <div>
