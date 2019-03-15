@@ -1,12 +1,6 @@
-let initialState = {
+import { combineReducers } from 'redux'
+import homepage from './Homepage'
 
-}
-
-function abc (state = initialState, action) {
-  switch(action.type) {
-    case 'ADD':
-      return {...state}
-  }
-}
-
-export default abc
+export default combineReducers({
+  homepage,
+})
