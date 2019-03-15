@@ -3,9 +3,8 @@ import ReactDOM from 'react-dom';
 import { applyMiddleware, createStore } from 'redux'
 import logger from 'redux-logger'
 import { Provider } from 'react-redux'
-import Header from './Components/header/header.js';
-import Banner from './Components/banner/banner.js';
-import TitleList from './Components/list/title-list.js';
+import { Route, BrowserRouter as Router } from 'react-router-dom'
+import Homepage from './Pages/Homepage'
 import reducer from './Reducers'
 
 const App = () => {
@@ -13,14 +12,9 @@ const App = () => {
   store.dispatch({type:'ADD'})
   return (
     <Provider store = {store}>
-      <div>
-        <Header />
-        <Banner />
-        <TitleList title="Top Rated Movies" url="movie/top_rated"/>
-        <TitleList title="Now Playing" url="movie/now_playing"/>
-        <TitleList title="Upcoming Movies" url="movie/upcoming"/>
-        <TitleList title="Top Rated TV shows" url="tv/popular"/>
-      </div>
+      <Router>
+        <Route path="/" component={Homepage}/>
+      </Router>
     </Provider>
 
   )
