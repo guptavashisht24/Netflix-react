@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types'
 import React from "react";
 
-function Item(props) {
+function MovieThumbnail(props) {
   return (
     <div className="Item" style={{ backgroundImage: "url(" + props.backDrop + ")" }}>
       <div className="overlay">
@@ -13,10 +13,10 @@ function Item(props) {
   );
 }
 
-Item.propTypes = {
+MovieThumbnail.propTypes = {
   title: PropTypes.string,
   backDrop: PropTypes.string,
   rating: PropTypes.number,
   plot: PropTypes.string
 }
-export default Item;
+export default MovieThumbnail;

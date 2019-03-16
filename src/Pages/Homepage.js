@@ -3,7 +3,7 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import Header from '../Components/header/header.js'
 import Banner from '../Components/banner/banner.js'
-// import TitleList from '../Components/list/title-list.js'
+import MovieThumbnailList from '../Components/MovieThumbnailList'
 import { getFeaturedMovies } from '../Actions'
 class Homepage extends Component {
   componentDidMount() {
@@ -26,6 +26,10 @@ class Homepage extends Component {
     this.props.getFeaturedMovies(this.categories)
   }
   render () {
+    const { featuredMovies } = this.props
+    const renderFeaturedMovies = featuredMovies.map(({ title, data}, index) => {
+      return ( <MovieThumbnailList key={index} title={title} movieList={data} /> )
+    })
     return (
       <div>
         <Header />
@@ -34,6 +38,7 @@ class Homepage extends Component {
         <TitleList title="Now Playing" url="movie/now_playing"/>
         <TitleList title="Upcoming Movies" url="movie/upcoming"/>
         <TitleList title="Top Rated TV shows" url="tv/popular"/> */}
+        {renderFeaturedMovies}
       </div>
     )
   }
@@ -41,10 +46,14 @@ class Homepage extends Component {
 
 Homepage.propTypes = {
   getFeaturedMovies: PropTypes.func,
+  featuredMovies: PropTypes.array,
 }
 
-const mapStateToProps = () => ({
-})
+const mapStateToProps = (state) => {
+  return {
+    featuredMovies: state.homepage.featuredMovies
+  }
+}
 
 const mapDispatchToProps = dispatch => ({
   getFeaturedMovies: (categories) => dispatch(getFeaturedMovies(categories))

@@ -6,6 +6,7 @@ import {
 let initialState = {
   isLoading: false,
   success: false,
+  featuredMovies:[],
 }
 
 let homepage = (state = initialState, action) => {
@@ -13,7 +14,7 @@ let homepage = (state = initialState, action) => {
     case REQUEST_ALL_FEATURED_MOVIES:
       return { ...state, isLoading: true }
     case RECEIVE_ALL_FEATURED_MOVIES:
-      return { ...state, ...action.payload, isLoading: false, success: action.success }
+      return { ...state, featuredMovies: [...action.payload], isLoading: false, success: action.success }
     default:
         return state
   }
