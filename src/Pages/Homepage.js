@@ -3,7 +3,7 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import Header from '../Components/header/header.js'
 import Banner from '../Components/banner/banner.js'
-import TitleList from '../Components/list/title-list.js'
+// import TitleList from '../Components/list/title-list.js'
 import { getFeaturedMovies } from '../Actions'
 class Homepage extends Component {
   componentDidMount() {
@@ -23,9 +23,7 @@ class Homepage extends Component {
       title: "Top Rated TV shows",
       url: "tv/popular",
     }]
-    this.categories.forEach(({ title, url }) => {
-      this.props.getFeaturedMovies(title, url)
-    })
+    this.props.getFeaturedMovies(this.categories)
   }
   render () {
     return (
@@ -49,7 +47,7 @@ const mapStateToProps = () => ({
 })
 
 const mapDispatchToProps = dispatch => ({
-  getFeaturedMovies: (title, url) => dispatch(getFeaturedMovies(title, url))
+  getFeaturedMovies: (categories) => dispatch(getFeaturedMovies(categories))
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(Homepage)

@@ -10,14 +10,12 @@ import reducer from './Reducers'
 
 const App = () => {
   let store = createStore(reducer, applyMiddleware(thunk, logger))
-  //store.dispatch({type:'ADD'})
   return (
-    <Provider store = {store}>
+    <Provider store={store}>
       <Router>
         <Route path="/" component={Homepage}/>
       </Router>
     </Provider>
-
   )
 }
 
