@@ -1,9 +1,13 @@
 import React, { Component } from 'react'
+import { connect } from 'react-redux'
 import Header from '../Components/header/header.js'
 import Banner from '../Components/banner/banner.js'
 import TitleList from '../Components/list/title-list.js'
-
+import { getFeaturedMovies } from '../Actions'
 class Homepage extends Component {
+  componentDidMount() {
+    this.props.getData()
+  }
   render () {
     return (
       <div>
@@ -18,4 +22,12 @@ class Homepage extends Component {
   }
 }
 
-export default Homepage
+const mapStateToProps = () => ({
+
+})
+
+const mapDispatchToProps = dispatch => ({
+  getData: () => dispatch(getFeaturedMovies("movie/top_rated"))
+})
+
+export default connect(mapStateToProps, mapDispatchToProps)(Homepage)
