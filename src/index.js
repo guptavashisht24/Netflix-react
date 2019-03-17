@@ -4,8 +4,10 @@ import { applyMiddleware, createStore } from 'redux'
 import thunk from 'redux-thunk'
 import logger from 'redux-logger'
 import { Provider } from 'react-redux'
-import { Route, BrowserRouter as Router } from 'react-router-dom'
+import { Route, BrowserRouter as Router, Switch } from 'react-router-dom'
+
 import Homepage from './Pages/Homepage'
+import MovieDetail from './Pages/MovieDetail'
 import reducer from './Reducers'
 
 const App = () => {
@@ -13,7 +15,10 @@ const App = () => {
   return (
     <Provider store={store}>
       <Router>
-        <Route path="/" component={Homepage}/>
+        <Switch>
+          <Route exact path="/" component={Homepage} />
+          <Route exact path="/movie/:id" component={MovieDetail} />
+        </Switch>
       </Router>
     </Provider>
   )

@@ -12,11 +12,13 @@ class MovieThumbnailList extends React.Component {
         let name;
         let description;
         let rating;
+        let id;
         if (i < 5) {
           backDrop =
             "http://image.tmdb.org/t/p/original" + videoDetail.backdrop_path;
           description = videoDetail.overview;
           rating = videoDetail.vote_average;
+          id = videoDetail.id
           if (!videoDetail.name) {
             name = videoDetail.original_title;
           } else if (videoDetail.title) {
@@ -28,6 +30,7 @@ class MovieThumbnailList extends React.Component {
             <MovieThumbnail
               key={i}
               title={name}
+              id={id}
               plot={description}
               backDrop={backDrop}
               rating={rating}
