@@ -2,14 +2,16 @@ import PropTypes from 'prop-types'
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { getMovieDetail } from '../Actions'
-
+import Header from '../Components/header/header.js'
 class MovieDetail extends Component {
   componentDidMount() {
-    this.props.getMovieDetail(123)
+    const { id } =  this.props.match.params
+    this.props.getMovieDetail(id)
   }
   render () {
     return (
       <div>
+        <Header />
         movie detail
       </div>
     )
