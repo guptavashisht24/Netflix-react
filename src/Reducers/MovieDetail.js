@@ -1,7 +1,7 @@
 
 let initialState = {
   isLoading: false,
-  MovieDetail: [],
+  data: {},
   success: false,
 }
 const movieDetail = (state=initialState, action) => {
@@ -9,7 +9,7 @@ const movieDetail = (state=initialState, action) => {
     case 'REQUEST_MOVIE_DETAIL':
       return { ...state, isLoading:true }
     case 'RECEIVE_MOVIE_DETAIL':
-      return { ...state, movieDetail: action.payload, isLoading: false }
+      return { ...state, data: action.payload, isLoading: false }
     default:
         return state
   }

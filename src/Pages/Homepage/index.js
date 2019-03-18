@@ -1,10 +1,10 @@
 import PropTypes from 'prop-types'
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import Header from '../Components/header/header.js'
-import Banner from '../Components/banner/banner.js'
-import MovieThumbnailList from '../Components/MovieThumbnailList'
-import { getFeaturedMovies } from '../Actions'
+import Header from '../../Components/header/header.js'
+import Banner from '../../Components/banner/banner.js'
+import MovieThumbnailList from '../../Components/MovieThumbnailList'
+import { getFeaturedMovies } from '../../Actions'
 class Homepage extends Component {
   componentDidMount() {
     this.categories = [{
