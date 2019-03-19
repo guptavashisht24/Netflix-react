@@ -14,7 +14,7 @@ class MovieDetail extends Component {
   render () {
     //console.log(this.props.movie)
     //return (<div></div>)
-    const { adult, poster_path, original_title, overview, genres, vote_average, release_date, runtime } = this.props.movie
+    const { adult, cast:movieCast, poster_path, original_title, overview, genres, vote_average, release_date, runtime } = this.props.movie
     const renderGenres = genres && genres.map((item, index) => (
       <li key={index}>{item.name}</li>
     ))
@@ -29,6 +29,9 @@ class MovieDetail extends Component {
       backgroundRepeat: 'no-repeat',
       minHeight: '400px',
     }
+    const renderCast = movieCast && movieCast.slice(0,5).map(({ name }, index) => {
+      return index < 4 ? ` ${name}, ` : name
+    })
     return (
       <div>
         <Header />
@@ -43,9 +46,11 @@ class MovieDetail extends Component {
                 <Li>{hour}h {minutes}min</Li>
                 <Li>{category}</Li>
               </Ul>
+              Starring: {renderCast}
               <Ul>
+
                 {renderGenres}
-              </Ul>  
+              </Ul>
               <div>{vote_average}</div>
               <div>{overview}</div>
             </Col>
