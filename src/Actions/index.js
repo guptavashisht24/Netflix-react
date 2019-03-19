@@ -31,6 +31,8 @@ export const getMovieDetail = (id) => {
     dispatch({ type: REQUEST_MOVIE_DETAIL })
     let data = await fetch(`https://api.themoviedb.org/3/movie/${id}?api_key=${API_KEY}&language=en-US`)
     let movieDetail = await data.json()
-    dispatch({ type: RECEIVE_MOVIE_DETAIL, payload: movieDetail })
+    let movieCast = await fetch(`https://api.themoviedb.org/3/movie/${id}/credits?api_key=${API_KEY}&language=en-US`)
+    let movieCastDetails = await movieCast.json()
+    dispatch({ type: RECEIVE_MOVIE_DETAIL, payload: { ...movieDetail, ...movieCastDetails }})
   }
 }
