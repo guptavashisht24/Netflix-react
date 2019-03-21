@@ -5,6 +5,11 @@ import "./style.scss";
 
 class Banner extends React.Component {
   render() {
+    const { trendingMovie } = this.props
+    console.log(trendingMovie)
+    const randomItem = Math.floor(Math.random() * (0 - trendingMovie && trendingMovie.length > 0 && trendingMovie.length)) + 0
+    console.log(randomItem)
+    //const trendingMovie =
     return (
       <div id="hero" className="Banner" style={{ backgroundImage: "url(https://images.alphacoders.com/633/633643.jpg)"}}>
         <div className="content">
@@ -30,4 +35,7 @@ class Banner extends React.Component {
   }
 }
 
+Banner.defaultProps = {
+  trendingMovie: [],
+}
 export default Banner;

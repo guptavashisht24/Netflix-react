@@ -6,7 +6,7 @@ export const Grid = styled(Container)`
 `
 export const H2 = styled.h2`
   font-size: 24px;
-  font-weight: 300;
+  font-weight: 400;
   line-height: 1.4;
   margin-bottom: 1em;
 `
@@ -16,6 +16,11 @@ export const Ul = styled.ul`
   padding: 0;
   display: flex;
 `
+
+export const Description = styled.p`
+  margin: 25px 0;
+`
+
 export const Li = styled.li`
   color: #9BA09A;
   padding: 0 10px;
@@ -28,4 +33,14 @@ export const Li = styled.li`
   :last-child {
     border-right: none;
   }
+`
+export const Features = styled.div`
+  display: flex;
+  margin-bottom: 10px;
+`
+
+export const Label = styled.div`
+  color: #9BA09A;
+  min-width: 80px;
+  margin-right: 20px;
 `

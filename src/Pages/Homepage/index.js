@@ -4,7 +4,7 @@ import { connect } from 'react-redux'
 import Header from '../../Components/header/header.js'
 import Banner from '../../Components/banner/banner.js'
 import MovieThumbnailList from '../../Components/MovieThumbnailList'
-import { getFeaturedMovies } from '../../Actions'
+import { getFeaturedMovies, getTrendingMovies } from '../../Actions'
 class Homepage extends Component {
   componentDidMount() {
     this.categories = [{
@@ -23,18 +23,19 @@ class Homepage extends Component {
       title: "Top Rated TV shows",
       url: "tv/popular",
     }]
+    this.props.getTrendingMovies()
     this.props.getFeaturedMovies(this.categories)
   }
   render () {
-    const { featuredMovies } = this.props
-    const renderFeaturedMovies = featuredMovies.map(({ title, data}, index) => {
-      return ( <MovieThumbnailList key={index} title={title} movieList={data} /> )
-    })
+    const { featuredMovies, trendingMovies } = this.props
+    // const renderFeaturedMovies = featuredMovies.map(({ title, data}, index) => {
+    //   return ( <MovieThumbnailList key={index} title={title} movieList={data} /> )
+    // })
     return (
       <div>
         <Header />
-        <Banner />
-        {renderFeaturedMovies}
+        <Banner trendingMovie={trendingMovies} />
+        {/* {renderFeaturedMovies} */}
       </div>
     )
   }
@@ -42,17 +43,21 @@ class Homepage extends Component {
 
 Homepage.propTypes = {
   getFeaturedMovies: PropTypes.func,
-  featuredMovies: PropTypes.array,
+  getTrendingMovies: PropTypes.func,
+  //featuredMovies: PropTypes.array,
+  trendingMovies: PropTypes.array,
 }
 
 const mapStateToProps = (state) => {
   return {
-    featuredMovies: state.homepage.featuredMovies
+    featuredMovies: state.homepage.featuredMovies,
+    trendingMovies: state.homepage.trendingMovies.movies,
   }
 }
 
 const mapDispatchToProps = dispatch => ({
-  getFeaturedMovies: (categories) => dispatch(getFeaturedMovies(categories))
+  getFeaturedMovies: (categories) => dispatch(getFeaturedMovies(categories)),
+  getTrendingMovies: () => dispatch(getTrendingMovies())
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(Homepage)

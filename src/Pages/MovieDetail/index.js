@@ -4,7 +4,7 @@ import { connect } from 'react-redux'
 import { Row, Col } from 'react-bootstrap'
 import { getMovieDetail } from '../../Actions'
 import Header from '../../Components/header/header.js'
-import  { Grid, H2, Ul, Li } from './style'
+import  { Grid, H2, Ul, Li, Description, Features, Label } from './style'
 
 class MovieDetail extends Component {
   componentDidMount() {
@@ -14,9 +14,9 @@ class MovieDetail extends Component {
   render () {
     //console.log(this.props.movie)
     //return (<div></div>)
-    const { adult, cast:movieCast, poster_path, original_title, overview, genres, vote_average, release_date, runtime } = this.props.movie
-    const renderGenres = genres && genres.map((item, index) => (
-      <li key={index}>{item.name}</li>
+    const { adult, cast:movieCast, crew, poster_path, original_title, overview, genres, vote_average, release_date, runtime } = this.props.movie
+    const renderGenres = genres && genres.map(({ name }, index) => (
+      index < genres.length - 1 ? ` ${name}, ` : name
     ))
     const category = adult ? 'A' : 'U/A'
     const renderReleaseData = release_date && release_date.slice(0,4)
@@ -32,6 +32,18 @@ class MovieDetail extends Component {
     const renderCast = movieCast && movieCast.slice(0,5).map(({ name }, index) => {
       return index < 4 ? ` ${name}, ` : name
     })
+    // const renderDirector = crew && crew.for(item => {
+    //   if (item.job==='Director') {
+    //     return item.name
+    //   }
+    // })
+    let renderDirector = []
+    crew && crew.forEach(item => {
+      if(item.job==="Director") {
+        renderDirector.push(item.name)
+      }
+    })
+    console.log(renderDirector)
     return (
       <div>
         <Header />
@@ -46,13 +58,17 @@ class MovieDetail extends Component {
                 <Li>{hour}h {minutes}min</Li>
                 <Li>{category}</Li>
               </Ul>
-              Starring: {renderCast}
-              <Ul>
-
-                {renderGenres}
-              </Ul>
+              <Description>{overview}</Description>
+              <Features>
+                <Label>Starring:</Label> {renderCast}
+              </Features>
+              <Features>
+                <Label>Genres:</Label> {renderGenres}
+              </Features>
+              <Features>
+                <Label>Created by:</Label> {renderDirector}
+              </Features>
               <div>{vote_average}</div>
-              <div>{overview}</div>
             </Col>
           </Row>
         </Grid>
