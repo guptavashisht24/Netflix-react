@@ -28,14 +28,14 @@ class Homepage extends Component {
   }
   render () {
     const { featuredMovies, trendingMovies } = this.props
-    // const renderFeaturedMovies = featuredMovies.map(({ title, data}, index) => {
-    //   return ( <MovieThumbnailList key={index} title={title} movieList={data} /> )
-    // })
+    const renderFeaturedMovies = featuredMovies.map(({ title, data}, index) => {
+      return ( <MovieThumbnailList key={index} title={title} movieList={data} /> )
+    })
     return (
       <div>
         <Header />
-        <Banner trendingMovie={trendingMovies} />
-        {/* {renderFeaturedMovies} */}
+        <Banner trendingMovie={trendingMovies && trendingMovies[0]} />
+        {renderFeaturedMovies}
       </div>
     )
   }
@@ -44,13 +44,17 @@ class Homepage extends Component {
 Homepage.propTypes = {
   getFeaturedMovies: PropTypes.func,
   getTrendingMovies: PropTypes.func,
-  //featuredMovies: PropTypes.array,
+  featuredMovies: PropTypes.array,
   trendingMovies: PropTypes.array,
+}
+
+Homepage.defaultProps = {
+  featuredMovies: [],  
 }
 
 const mapStateToProps = (state) => {
   return {
-    featuredMovies: state.homepage.featuredMovies,
+    featuredMovies: state.homepage.featuredMovies.movies,
     trendingMovies: state.homepage.trendingMovies.movies,
   }
 }

@@ -5,25 +5,14 @@ import "./style.scss";
 
 class Banner extends React.Component {
   render() {
-    const { trendingMovie } = this.props
-    console.log(trendingMovie)
-    const randomItem = Math.floor(Math.random() * (0 - trendingMovie && trendingMovie.length > 0 && trendingMovie.length)) + 0
-    console.log(randomItem)
-    //const trendingMovie =
+    const { trendingMovie: { backdrop_path, title, overview } } = this.props
+
+    //ToDo random movie from trending
     return (
-      <div id="hero" className="Banner" style={{ backgroundImage: "url(https://images.alphacoders.com/633/633643.jpg)"}}>
+      <div id="hero" className="Banner" style={{ backgroundImage: `url(http://image.tmdb.org/t/p/original/${backdrop_path} )`}}>
         <div className="content">
-          <img
-            className="logo"
-            src="http://www.returndates.com/backgrounds/narcos.logo.png"
-            alt=""
-          />
-          <h2>Season 2 now available</h2>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloremque
-            id quam sapiente unde voluptatum alias vero debitis, magnam quis
-            quod.
-          </p>
+          <h1>{title}</h1>
+          <p>{overview}</p>
           <div className="button-wrapper">
             <ButtonBlank buttonText="Join Now" />
             <ButtonBlank buttonText="another text" />
