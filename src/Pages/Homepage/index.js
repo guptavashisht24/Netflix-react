@@ -4,6 +4,7 @@ import { connect } from 'react-redux'
 import Header from '../../Components/header/header.js'
 import Banner from '../../Components/banner/banner.js'
 import MovieThumbnailList from '../../Components/MovieThumbnailList'
+import Loader from '../../Components/Loader'
 import { getFeaturedMovies, getTrendingMovies } from '../../Actions'
 class Homepage extends Component {
   componentDidMount() {
@@ -27,10 +28,12 @@ class Homepage extends Component {
     this.props.getFeaturedMovies(this.categories)
   }
   render () {
-    const { featuredMovies, trendingMovies } = this.props
-    const renderFeaturedMovies = featuredMovies.map(({ title, data}, index) => {
+    const { featuredMovies: { movies, isLoading }, trendingMovies } = this.props
+    const renderFeaturedMovies = movies && movies.map(({ title, data}, index) => {
       return ( <MovieThumbnailList key={index} title={title} movieList={data} /> )
     })
+    if(isLoading)
+      return <Loader />
     return (
       <div>
         <Header />
@@ -44,17 +47,17 @@ class Homepage extends Component {
 Homepage.propTypes = {
   getFeaturedMovies: PropTypes.func,
   getTrendingMovies: PropTypes.func,
-  featuredMovies: PropTypes.array,
+  featuredMovies: PropTypes.object,
   trendingMovies: PropTypes.array,
 }
 
 Homepage.defaultProps = {
-  featuredMovies: [],  
+  featuredMovies: {},
 }
 
 const mapStateToProps = (state) => {
   return {
-    featuredMovies: state.homepage.featuredMovies.movies,
+    featuredMovies: state.homepage.featuredMovies,
     trendingMovies: state.homepage.trendingMovies.movies,
   }
 }

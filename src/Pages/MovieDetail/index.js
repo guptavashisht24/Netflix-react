@@ -12,8 +12,6 @@ class MovieDetail extends Component {
     this.props.getMovieDetail(id)
   }
   render () {
-    //console.log(this.props.movie)
-    //return (<div></div>)
     const { adult, cast:movieCast, crew, poster_path, original_title, overview, genres, vote_average, release_date, runtime } = this.props.movie
     const renderGenres = genres && genres.map(({ name }, index) => (
       index < genres.length - 1 ? ` ${name}, ` : name
@@ -32,18 +30,12 @@ class MovieDetail extends Component {
     const renderCast = movieCast && movieCast.slice(0,5).map(({ name }, index) => {
       return index < 4 ? ` ${name}, ` : name
     })
-    // const renderDirector = crew && crew.for(item => {
-    //   if (item.job==='Director') {
-    //     return item.name
-    //   }
-    // })
     let renderDirector = []
     crew && crew.forEach(item => {
       if(item.job==="Director") {
         renderDirector.push(item.name)
       }
     })
-    console.log(renderDirector)
     return (
       <div>
         <Header />
