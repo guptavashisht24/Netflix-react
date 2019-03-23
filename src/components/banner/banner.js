@@ -14,8 +14,7 @@ class Banner extends React.Component {
           <h1>{title}</h1>
           <p>{overview}</p>
           <div className="button-wrapper">
-            <ButtonBlank buttonText="Join Now" />
-            <ButtonBlank buttonText="another text" />
+            <ButtonBlank buttonText="View Now" />
           </div>
         </div>
         <div className="overlay" />

@@ -5,10 +5,10 @@ export const Grid = styled(Container)`
   margin-top: 125px;
 `
 export const H2 = styled.h2`
-  font-size: 24px;
+  font-size: 35px;
   font-weight: 400;
   line-height: 1.4;
-  margin-bottom: 1em;
+  margin-bottom: 15px;
 `
 export const Ul = styled.ul`
   list-style-type: none;
@@ -16,7 +16,44 @@ export const Ul = styled.ul`
   padding: 0;
   display: flex;
 `
-
+export const RatingWrapper = styled.div`
+  display: flex;
+  align-items: center;
+  margin-bottom: 25px;
+  font-weight: 500;
+  font-size: 20px;
+`
+export const Rating = styled.i`
+position: relative;
+display: inline-block;
+width: 0;
+height: 0;
+margin-left: .9em;
+margin-right: .9em;
+margin-bottom: 1.2em;
+border-right:  .3em solid transparent;
+border-bottom: .7em  solid #FC0;
+border-left:   .3em solid transparent;
+/* Controlls the size of the stars. */
+font-size: 14px;
+margin-right: 15px;
+&:before, &:after {
+  content: '';
+  display: block;
+  width: 0;
+  height: 0;
+  position: absolute;
+  top: .6em;
+  left: -1em;
+  border-right:  1em solid transparent;
+  border-bottom: .7em  solid #FC0;
+  border-left:   1em solid transparent;
+  transform: rotate(-35deg);
+}
+&:after {
+  transform: rotate(35deg);
+}
+`
 export const Description = styled.p`
   margin: 25px 0;
 `
