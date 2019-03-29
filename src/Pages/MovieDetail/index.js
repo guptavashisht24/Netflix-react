@@ -63,7 +63,6 @@ class MovieDetail extends Component {
               <Features>
                 <Label>Created by:</Label> {renderDirector}
               </Features>
-              <div>{vote_average}</div>
             </Col>
           </Row>
         </Grid>
@@ -74,6 +73,7 @@ class MovieDetail extends Component {
 
 MovieDetail.propTypes = {
   getMovieDetail: PropTypes.func,
+  match: PropTypes.object,
   movie: PropTypes.object,
 }
 
