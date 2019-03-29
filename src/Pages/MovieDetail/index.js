@@ -4,7 +4,7 @@ import { connect } from 'react-redux'
 import { Row, Col } from 'react-bootstrap'
 import { getMovieDetail } from '../../Actions'
 import Header from '../../Components/header/header.js'
-import  { Grid, H2, Ul, RatingWrapper, Rating, Li, Description, Features, Label } from './style'
+import  { Grid, Heading, List, RatingWrapper, Rating, Description, Features, Label } from './style'
 
 class MovieDetail extends Component {
   componentDidMount() {
@@ -44,15 +44,15 @@ class MovieDetail extends Component {
             <Col md={5} style={backgroundStyle}>
             </Col>
             <Col sm={7}>
-              <H2>{original_title}</H2>
+              <Heading>{original_title}</Heading>
               <RatingWrapper>
                 <Rating />{vote_average}
               </RatingWrapper>
-              <Ul>
-                <Li>{renderReleaseData}</Li>
-                <Li>{hour}h {minutes}min</Li>
-                <Li>{category}</Li>
-              </Ul>
+              <List>
+                <li>{renderReleaseData}</li>
+                <li>{hour}h {minutes}min</li>
+                <li>{category}</li>
+              </List>
               <Description>{overview}</Description>
               <Features>
                 <Label>Starring:</Label> {renderCast}
