@@ -4,6 +4,12 @@ import { Container } from 'react-bootstrap'
 export const Grid = styled(Container)`
   margin-top: 125px;
 `
+export const Image = styled.img`
+  height: auto;
+  width: 100%;
+  max-width: 300px;
+`
+
 export const Heading = styled.h2`
   font-size: 35px;
   font-weight: 400;
