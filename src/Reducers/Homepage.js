@@ -19,7 +19,6 @@ let initialState = {
 }
 
 let homepage = (state = initialState, action) => {
-  console.log(action.payload)
   switch(action.type) {
     case REQUEST_ALL_FEATURED_MOVIES:
       return { ...state,  featuredMovies: { isLoading : true } }

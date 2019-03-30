@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types'
 import React from "react";
 import ButtonBlank from "../button/button-blank.js";
 // import ButtonFull from "../button/button-full.js";
@@ -25,5 +26,8 @@ class Banner extends React.Component {
 
 Banner.defaultProps = {
   trendingMovie: [],
+}
+Banner.propTypes = {
+  trendingMovie: PropTypes.obj,
 }
 export default Banner;

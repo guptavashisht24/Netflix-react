@@ -16,6 +16,7 @@ export const Heading = styled.h2`
   line-height: 1.4;
   margin-bottom: 15px;
 `
+
 export const List = styled.ul`
   list-style-type: none;
   margin: 0;
@@ -32,6 +33,28 @@ export const List = styled.ul`
     }
     :last-child {
       border-right: none;
+    }
+  }
+`
+export const TabbedNavigation = styled.div`
+  .nav {
+    border: none;
+    margin-bottom: 20px;
+    .nav-link {
+      text-transform: uppercase;
+      font-weight: 500;
+      color: #fff;
+      border: none;
+      border-bottom: 3px solid transparent;
+      margin-right: 25px;
+      padding: 0 0 10px;
+      color: #9BA09A;
+      transition: all 300ms ease-in;
+      &.active,&:hover {
+        border-bottom-color: #e50914;
+        color: #fff;
+        background: transparent;
+      }
     }
   }
 `

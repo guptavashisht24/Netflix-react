@@ -8,6 +8,8 @@ export const REQUEST_TRENDING_MOVIES = "REQUEST_TRENDING_MOVIES";
 export const RECEIVE_TRENDING_MOVIES = "RECEIVE_TRENDING_MOVIES";
 export const REQUEST_SIMILAR_MOVIES = "REQUEST_SIMILAR_MOVIES";
 export const RECEIVE_SIMILAR_MOVIES = "RECEIVE_SIMILAR_MOVIES";
+export const REQUEST_MOVIE_TRAILER = "REQUEST_MOVIE_TRAILER"
+export const RECEIVE_MOVIE_TRAILER = "RECEIVE_MOVIE_TRAILER"
 
 export const getFeaturedMovies = (categories) => {
   return async (dispatch) => {
@@ -48,5 +50,14 @@ export const getSimilarMovie = (id) => {
     let data = await fetch(`https://api.themoviedb.org/3/movie/${id}/similar?api_key=${API_KEY}&language=en-US`)
     let similarMovies  = await data.json()
     dispatch({ type: RECEIVE_SIMILAR_MOVIES, payload: similarMovies })
+  }
+}
+
+export const getMovieTrailer = (id) => {
+  return async (dispatch) => {
+    dispatch( {type: REQUEST_MOVIE_TRAILER })
+    let data = await fetch(`https://api.themoviedb.org/3/movie/${id}/videos?api_key=${API_KEY}&language=en-US`)
+    let movieTrailers = await data.json()
+    dispatch({ type: RECEIVE_MOVIE_TRAILER, payload: movieTrailers.results })
   }
 }
