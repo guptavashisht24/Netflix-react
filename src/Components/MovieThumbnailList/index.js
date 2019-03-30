@@ -7,30 +7,25 @@ class MovieThumbnailList extends React.Component {
     let { movieList } = this.props
     let renderMovieDetails = "";
     if (movieList) {
-      renderMovieDetails = movieList.map(function(videoDetail, i) {
-        let backDrop;
-        let name;
-        let description;
-        let rating;
-        let id;
+      renderMovieDetails = movieList.map(({backdrop_path, overview, vote_average,id, name, original_title, title,}, i) => {
+        let backDrop, movieTitle, description, rating, movieId;
         if (i < 5) {
-          backDrop =
-            "http://image.tmdb.org/t/p/original" + videoDetail.backdrop_path;
-          description = videoDetail.overview;
-          rating = videoDetail.vote_average;
-          id = videoDetail.id
-          if (!videoDetail.name) {
-            name = videoDetail.original_title;
-          } else if (videoDetail.title) {
-            name = videoDetail.title;
+          backDrop = "http://image.tmdb.org/t/p/original" + backdrop_path;
+          description = overview;
+          rating = vote_average;
+          movieId = id
+          if (!name) {
+            movieTitle = original_title;
+          } else if (title) {
+            movieTitle = title;
           } else {
-            name = videoDetail.name;
+            movieTitle = name;
           }
           return (
             <MovieThumbnail
               key={i}
-              title={name}
-              id={id}
+              title={movieTitle}
+              id={movieId}
               plot={description}
               backDrop={backDrop}
               rating={rating}
