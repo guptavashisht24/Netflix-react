@@ -2,7 +2,7 @@ import PropTypes from 'prop-types'
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { Row, Col } from 'react-bootstrap'
-import { getMovieDetail } from '../../Actions'
+import { getMovieDetail, getSimilarMovie } from '../../Actions'
 import Header from '../../Components/header/header.js'
 import  { Grid, Heading, List, RatingWrapper, Rating, Description, Features, Label } from './style'
 
@@ -10,6 +10,7 @@ class MovieDetail extends Component {
   componentDidMount() {
     const { id } =  this.props.match.params
     this.props.getMovieDetail(id)
+    this.props.getSimilarMovie(id)
   }
   render () {
     const { adult, cast:movieCast, crew, poster_path, original_title, overview, genres, vote_average, release_date, runtime } = this.props.movie
@@ -73,6 +74,7 @@ class MovieDetail extends Component {
 
 MovieDetail.propTypes = {
   getMovieDetail: PropTypes.func,
+  getSimilarMovie: PropTypes.func,
   match: PropTypes.object,
   movie: PropTypes.object,
 }
@@ -82,7 +84,8 @@ const mapStateToProps = (state) =>  ({
 })
 
 const mapDispatchToProps = (dispatch) => ({
-  getMovieDetail: (id) => dispatch(getMovieDetail(id))
+  getMovieDetail: (id) => dispatch(getMovieDetail(id)),
+  getSimilarMovie: (id) => dispatch(getSimilarMovie(id))
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(MovieDetail)

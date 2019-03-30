@@ -6,16 +6,12 @@ export const REQUEST_MOVIE_DETAIL = "REQUEST_MOVIE_DETAIL";
 export const RECEIVE_MOVIE_DETAIL = "RECEIVE_MOVIE_DETAIL";
 export const REQUEST_TRENDING_MOVIES = "REQUEST_TRENDING_MOVIES";
 export const RECEIVE_TRENDING_MOVIES = "RECEIVE_TRENDING_MOVIES";
+export const REQUEST_SIMILAR_MOVIES = "REQUEST_SIMILAR_MOVIES";
+export const RECEIVE_SIMILAR_MOVIES = "RECEIVE_SIMILAR_MOVIES";
+
 export const getFeaturedMovies = (categories) => {
   return async (dispatch) => {
     dispatch({ type: REQUEST_ALL_FEATURED_MOVIES })
-    // fetch(`https://api.themoviedb.org/3/${url}?api_key=${API_KEY}`)
-    //   .then(res => res.json())
-    //   .then(data => dispatch({ type: RECEIVE_ALL_FEATURED_MOVIES, title, payload: data, success: true }))
-    //   .catch(error => {
-    //     dispatch({ type: RECEIVE_ALL_FEATURED_MOVIES, payload: error, success: false })
-    //   })
-    // }
     let featuredMovies = categories.map(async ({ title, url }) => {
       let data = await fetch(`https://api.themoviedb.org/3/${url}?api_key=${API_KEY}`)
       let response = await data.json()
@@ -23,7 +19,6 @@ export const getFeaturedMovies = (categories) => {
     })
     let featuredMoviesList = await Promise.all(featuredMovies)
     dispatch({ type: RECEIVE_ALL_FEATURED_MOVIES, payload: featuredMoviesList, success: true })
-    //console.log(newData)
   }
 };
 
@@ -44,5 +39,14 @@ export const getTrendingMovies = () => {
     let data = await fetch(`https://api.themoviedb.org/3/trending/all/day?api_key=${API_KEY}&language=en-US`)
     let trendingMovies = await data.json()
     dispatch({ type: RECEIVE_TRENDING_MOVIES, payload: trendingMovies.results })
+  }
+}
+
+export const getSimilarMovie = (id) => {
+  return async (dispatch) => {
+    dispatch( {type: REQUEST_SIMILAR_MOVIES })
+    let data = await fetch(`https://api.themoviedb.org/3/movie/${id}/similar?api_key=${API_KEY}&language=en-US`)
+    let similarMovies  = await data.json()
+    dispatch({ type: RECEIVE_SIMILAR_MOVIES, payload: similarMovies })
   }
 }
