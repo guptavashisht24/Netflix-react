@@ -1,6 +1,3 @@
-/**
- * Created by Vijay on 11/17/16.
- */
 import React from 'react';
 
 // Navigation

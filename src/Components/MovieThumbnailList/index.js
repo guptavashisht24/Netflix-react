@@ -36,8 +36,8 @@ class MovieThumbnailList extends React.Component {
       });
     }
     return (
-      <div className="TitleList">
-        <div className="Title">
+      <div className="title-list">
+        <div className="title">
           <h2>{this.props.title}</h2>
           <div className="titles-wrapper">{renderMovieDetails}</div>
         </div>

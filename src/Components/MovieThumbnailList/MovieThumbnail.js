@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom'
 function MovieThumbnail(props) {
   return (
     <Link to={`/movie/${props.id}`}>
-      <div className="Item" style={{ backgroundImage: "url(" + props.backDrop + ")" }}>
+      <div className="item" style={{ backgroundImage: "url(" + props.backDrop + ")" }}>
         <div className="overlay">
           <div className="title">{props.title}</div>
           <div className="rating">{props.rating} / 10</div>

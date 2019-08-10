@@ -223,7 +223,7 @@ body {
   -moz-border-radius: 4px;
   border-radius: 4px;
 }
-.Banner ~ .TitleList:nth-child(3) {
+.Banner ~ .title-list:nth-child(3) {
   margin-top: -10vw;
   position: relative;
   z-index: 4;
@@ -232,13 +232,13 @@ body {
 /* Banner */
 
 /* Item List */
-h2,.TitleList .Title {
-       font-size: 24px;
-       font-weight: 300;
-       line-height: 1.4;
-       margin-bottom: 1em;
- }
-.TitleList {
+h2,.title-list .title {
+  font-size: 24px;
+  font-weight: 300;
+  line-height: 1.4;
+  margin-bottom: 1em;
+}
+.title-list {
   padding: 20px 40px;
   box-sizing: border-box;
   -webkit-transition: opacity 3s ease;
@@ -247,19 +247,19 @@ h2,.TitleList .Title {
   position: relative;
   z-index: 4;
 }
-.TitleList .titles-wrapper {
+.title-list .titles-wrapper {
   margin: 20px 0;
   width: calc(100vw - 80px);
   box-sizing: border-box;
 }
-.TitleList[data-loaded='true'] {
+.title-list[data-loaded='true'] {
   opacity: 1;
 }
 
-.Item {
+.item {
   width: calc(20% - 10px);
   min-width: calc(20% - 10px);
-  background-color: #000000;
+ // background-color: #000000;
   background-position: center;
   background-size: 100%;
   height: 200px;
@@ -270,13 +270,13 @@ h2,.TitleList .Title {
   -webkit-transition: background 1s ease;
   transition: background 1s ease;
 }
-.Item:nth-child(n+6) {
+.item:nth-child(n+6) {
   margin-top: 20px;
 }
-.Item:last-child {
+.item:last-child {
   margin-right: 0;
 }
-.Item .overlay {
+.item .overlay {
   /* FF3.6-15 */
   background: -webkit-linear-gradient(top, rgba(0, 0, 0, 0.75) 0%, transparent 100%);
   /* Chrome10-25,Safari5.1-6 */
@@ -292,20 +292,20 @@ h2,.TitleList .Title {
   -webkit-transition: opacity .125s ease;
   transition: opacity .125s ease;
 }
-.Item .overlay .title {
+.item .overlay .title {
   font-size: 16px;
   font-weight: 200;
   opacity: 0;
   -webkit-transition: opacity .25s ease;
   transition: opacity .25s ease;
 }
-.Item .overlay .rating {
+.item .overlay .rating {
   font-size: 14px;
   opacity: 0;
   -webkit-transition: opacity .25s ease .125s;
   transition: opacity .25s ease .125s;
 }
-.Item .overlay .plot {
+.item .overlay .plot {
   font-size: 14px;
   margin-top: 100px;
   font-weight: 300;
@@ -320,23 +320,23 @@ h2,.TitleList .Title {
   -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
 }
-.Item:hover {
+.item:hover {
   background-size: 150%;
 }
-.Item:hover .overlay {
+.item:hover .overlay {
   opacity: 1;
   pointer-events: all;
 }
-.Item:hover .overlay .plot {
+.item:hover .overlay .plot {
   margin-top: 10px;
   opacity: 1;
 }
-.Item:hover .overlay .title {
+.item:hover .overlay .title {
   opacity: 1;
 }
-.Item:hover .overlay .rating {
+.item:hover .overlay .rating {
   opacity: 1;
 }
-.Item:hover .overlay .ListToggle {
+.item:hover .overlay .ListToggle {
   opacity: 1;
 }

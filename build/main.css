@@ -216,20 +216,20 @@ body {
   -moz-border-radius: 4px;
   border-radius: 4px; }
 
-.Banner ~ .TitleList:nth-child(3) {
+.Banner ~ .title-list:nth-child(3) {
   margin-top: -10vw;
   position: relative;
   z-index: 4; }
 
 /* Banner */
 /* Item List */
-h2, .TitleList .Title {
+h2, .title-list .Title {
   font-size: 24px;
   font-weight: 300;
   line-height: 1.4;
   margin-bottom: 1em; }
 
-.TitleList {
+.title-list {
   padding: 20px 40px;
   box-sizing: border-box;
   -webkit-transition: opacity 3s ease;
@@ -238,12 +238,12 @@ h2, .TitleList .Title {
   position: relative;
   z-index: 4; }
 
-.TitleList .titles-wrapper {
+.title-list .titles-wrapper {
   margin: 20px 0;
   width: calc(100vw - 80px);
   box-sizing: border-box; }
 
-.TitleList[data-loaded='true'] {
+.title-list[data-loaded='true'] {
   opacity: 1; }
 
 .Item {
