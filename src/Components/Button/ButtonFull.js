@@ -9,4 +9,4 @@ function ButtonFull(props){
 ButtonFull.propTypes = {
   buttonText: PropTypes.string.isRequired,
 }
- export default ButtonFull;
+export default ButtonFull;

@@ -1,10 +1,10 @@
-import React from 'react';
-import Logo from './logo.js';
-import Search from './search.js';
-import Navigation from './navigation.js';
-import ButtonFull from '../button/button-full.js';
+import React from 'react'
+import Logo from './logo.js'
+import Search from './search.js'
+import Navigation from './navigation.js'
+import ButtonFull from '../Button/ButtonFull'
 // Navigation
-function Header(){
+const Header = () => {
     return (
         <header className="Header">
             <div className="Navigation-left">

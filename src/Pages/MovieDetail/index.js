@@ -4,7 +4,7 @@ import { connect } from 'react-redux'
 import YouTube from 'react-youtube'
 import { Row, Col, Tabs, Tab, Button } from 'react-bootstrap'
 import { getMovieDetail, getSimilarMovie, getMovieTrailer } from '../../Actions'
-import Header from '../../Components/header/header.js'
+import Header from '../../Components/Header'
 import  { Grid, Image, Heading, List, TabbedNavigation, RatingWrapper, Rating, Description, Features, Label } from './style'
 
 class MovieDetail extends Component {
@@ -19,7 +19,7 @@ class MovieDetail extends Component {
   }
   UNSAFE_componentWillReceiveProps(nextProps) {
     //console.log("tnextProps",nextProps)
-    console.log("UNSAFE_componentWillReceiveProps called",nextProps)
+    //console.log("UNSAFE_componentWillReceiveProps called",nextProps)
     if(nextProps.movieTrailers !== this.props.movieTrailers) {
       //this.setState({currentVideoId:nextProps.movieTrailers[0].key})
       // console.log("this.props.movieTrailers",this.props)
@@ -63,7 +63,7 @@ class MovieDetail extends Component {
       //   autoplay: 1
       // }
     }
-    console.log(this.props.movieTrailers,"render")
+    //console.log(this.props.movieTrailers,"render")
     return (
       <div>
         <Header />

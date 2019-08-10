@@ -1,10 +1,10 @@
 import PropTypes from 'prop-types'
-import React from "react";
-import ButtonBlank from "../button/button-blank.js";
+import React, { Component } from "react"
+import ButtonBlank from "../Button/ButtonBlank"
 // import ButtonFull from "../button/button-full.js";
-import "./style.scss";
+import "./style.scss"
 
-class Banner extends React.Component {
+class Banner extends Component {
   render() {
     const { trendingMovie: { backdrop_path, title, overview } } = this.props
 
