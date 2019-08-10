@@ -2,9 +2,9 @@ import PropTypes from 'prop-types'
 import React from 'react'
 
 function ButtonBlank(props){
-    return(
-        <a href="#" className="Button">{props.buttonText}</a>
-    )
+  return(
+    <a href="#" className="Button">{props.buttonText}</a>
+  )
 }
 
 ButtonBlank.propTypes = {
