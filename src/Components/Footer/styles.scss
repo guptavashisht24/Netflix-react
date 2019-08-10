@@ -1,0 +1,30 @@
+footer {
+  .container {
+    max-width: 980px;
+    margin: 20px auto 0;
+    padding: 0 25px;
+    color: grey;
+    .logos {
+      margin-bottom: 15px;
+      a {
+        margin-right: 25px;
+      }
+      .fa {
+        color: grey;
+      }
+    }
+    .sub-links {
+      ul {
+        list-style: none;
+        display: flex;
+        flex-wrap: wrap;
+        li {
+          flex-basis: 25%;
+          margin-bottom: 15px;
+          font-size: 14px;
+          color: grey;
+        }
+      }
+    }
+  }
+}
