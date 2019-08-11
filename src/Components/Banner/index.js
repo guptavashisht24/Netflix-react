@@ -25,9 +25,9 @@ class Banner extends Component {
 }
 
 Banner.defaultProps = {
-  trendingMovie: [],
+  trendingMovie: {},
 }
 Banner.propTypes = {
-  trendingMovie: PropTypes.obj,
+  trendingMovie: PropTypes.object,
 }
 export default Banner;
