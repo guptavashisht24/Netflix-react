@@ -17,7 +17,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-.Header {
+.header-wrapper {
   /* FF3.6-15 */
   background: -webkit-linear-gradient(top, black 0%, transparent 100%);
   /* Chrome10-25,Safari5.1-6 */
@@ -33,7 +33,7 @@ body {
   box-sizing: border-box;
   z-index: 5;
 }
-.Logo {
+.logo {
   width: 151px;
   height: 41px;
   margin-right: 10px;
@@ -41,50 +41,50 @@ body {
   transition: margin .125s ease;
   float: left;
 }
-.Logo svg {
+.logo svg {
   -webkit-transform: scale(0.5);
   transform: scale(0.5);
   -webkit-transform-origin: 0 0;
   transform-origin: 0 0;
 }
-.Logo svg path {
+.logo svg path {
   fill: #e50914;
   -webkit-transition: fill .125s ease;
   transition: fill .125s ease;
 }
-.Logo:hover {
+.logo:hover {
   cursor: pointer;
   margin-top: 2px;
 }
-.Logo:hover svg path {
+.logo:hover svg path {
   fill: #ffffff !important;
 }
-.Navigation-left{
+.navigation-left{
   float: left;
   width: 50%;
 }
-.Navigation-right{
+.navigation-right{
   float: right;
   width: 50%;
   text-align: right;
 }
-.Navigation-right .Button-full{
+.navigation-right .button-full{
   height: auto;
   line-height: normal;
   padding: 8px 10px;
   text-align: center;
 }
-.Navigation {
+.navigation {
   display: inline-block;
 }
-.Navigation ul {
+.navigation ul {
   height: 37px;
   align-items: center;
   margin: 0;
   padding: 0 10px;
 }
 
-.Navigation ul li {
+.navigation ul li {
   font-weight: 400;
   padding: 7px 10px;
   font-size: 14px;
@@ -93,20 +93,20 @@ body {
   list-style: none;
   float: left;
 }
-.Navigation ul li a{
+.navigation ul li a{
   display: block;
   color: #fff;
   text-decoration: none;
 }
-.Navigation ul li a:hover{
+.navigation ul li a:hover{
   text-decoration: none;
 }
 
-.Navigation ul li:hover {
+.navigation ul li:hover {
   background: red;
   cursor: pointer;
 }
-.Search {
+.search {
   font-family: "Lato", sans-serif;
   font-weight: 300;
   font-size: 14px;
@@ -126,36 +126,36 @@ body {
   -webkit-transition: border .25s ease, width .125s ease .125s;
   transition: border .25s ease, width .125s ease .125s;
 }
-.Search:focus {
+.search:focus {
   border: 2px solid #e50914;
   width: 60%;
 }
 
 /* Banner */
 
-.Banner {
+.banner-wrapper {
   width: 100%;
   position: relative;
   background-size: cover;
   min-height: 800px;
 }
-.Banner .content {
+.banner-wrapper .content {
   position: relative;
   z-index: 4;
   width: 500px;
   left: 10vw;
   top: 10vw;
 }
-.Banner .content .logo {
+.banner-wrapper .content .logo {
   max-width: 400px;
   display: block;
   position: relative;
   left: -5px;
 }
-.Banner .content p {
+.banner-wrapper .content p {
   width: 100%;
 }
-.Banner .content .button-wrapper {
+.banner-wrapper .content .button-wrapper {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -163,10 +163,10 @@ body {
   width: 400px;
   margin-top: 30px;
 }
-.Banner .content .button-wrapper .Button:first-child {
+.banner-wrapper .content .button-wrapper .Button:first-child {
   margin-right: 10px;
 }
-.Banner .overlay {
+.banner-wrapper .overlay {
   /* FF3.6-15 */
   background: -webkit-linear-gradient(top, #221f1f 0%, rgba(34, 31, 31, 0) 100%);
   /* Chrome10-25,Safari5.1-6 */
@@ -183,11 +183,11 @@ body {
   -webkit-transform: rotate(180deg);
   transform: rotate(180deg);
 }
-.Pull-right{
+.pull-right{
   float: right;
 }
 
-.Button {
+.button {
   background: transparent;
   height: 44px;
   line-height: 44px;
@@ -203,16 +203,16 @@ body {
   -webkit-transition: border .125s ease, background .125s ease;
   transition: border .125s ease, background .125s ease;
 }
-.Button:hover {
+.button:hover {
   border: 2px solid #e50914;
 }
-.Button[data-primary='true'] {
+.button[data-primary='true'] {
   border: 2px solid #e50914;
 }
-.Button[data-primary='true']:hover {
+.button[data-primary='true']:hover {
   background: #e50914;
 }
-.Button-full {
+.button-full {
   color: #fff;
   background-color: #e50914;
   border-radius: 0;
@@ -223,7 +223,7 @@ body {
   -moz-border-radius: 4px;
   border-radius: 4px;
 }
-.Banner ~ .title-list:nth-child(3) {
+.banner-wrapper ~ .title-list:nth-child(3) {
   margin-top: -10vw;
   position: relative;
   z-index: 4;
@@ -234,7 +234,7 @@ body {
 /* Item List */
 h2,.title-list .title {
   font-size: 24px;
-  font-weight: 300;
+  font-weight: 400;
   line-height: 1.4;
   margin-bottom: 1em;
 }
@@ -294,7 +294,7 @@ h2,.title-list .title {
 }
 .item .overlay .title {
   font-size: 16px;
-  font-weight: 200;
+  font-weight: 400;
   opacity: 0;
   -webkit-transition: opacity .25s ease;
   transition: opacity .25s ease;

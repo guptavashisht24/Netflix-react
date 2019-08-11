@@ -25,7 +25,7 @@ class Search extends React.Component{
 
     render(){
         return (
-                <input type="text" className="Search" value={this.state.searchTerm} placeholder="Search for an item" onKeyUp={this.handleKeyUp.bind(this)} onChange={this.handleChange.bind(this)}/>
+                <input type="text" className="search" value={this.state.searchTerm} placeholder="Search for an item" onKeyUp={this.handleKeyUp.bind(this)} onChange={this.handleChange.bind(this)}/>
         );
     }
 }

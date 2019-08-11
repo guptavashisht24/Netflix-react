@@ -10,7 +10,7 @@ class Banner extends Component {
 
     //ToDo random movie from trending
     return (
-      <div id="hero" className="Banner" style={{ backgroundImage: `url(http://image.tmdb.org/t/p/original/${backdrop_path} )`}}>
+      <div id="hero" className="banner-wrapper" style={{ backgroundImage: `url(http://image.tmdb.org/t/p/original/${backdrop_path} )`}}>
         <div className="content">
           <h1>{title}</h1>
           <p>{overview}</p>

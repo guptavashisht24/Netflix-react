@@ -21,8 +21,14 @@ footer {
         li {
           flex-basis: 25%;
           margin-bottom: 15px;
-          font-size: 14px;
-          color: grey;
+          a {
+            font-size: 14px;
+            color: grey;
+            transition: color 300ms;
+            &:hover {
+              color: #fff;
+            }
+          }
         }
       }
     }

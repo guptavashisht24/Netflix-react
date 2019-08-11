@@ -3,7 +3,7 @@ import React from 'react';
 
 function ButtonFull(props){
   return(
-    <a href="#" className="Button Button-full">{props.buttonText}</a>
+    <a href="#" className="button button-full">{props.buttonText}</a>
   )
 }
 ButtonFull.propTypes = {

@@ -3,7 +3,7 @@ import React from 'react'
 
 function ButtonBlank(props){
   return(
-    <a href="#" className="Button">{props.buttonText}</a>
+    <a href="#" className="button">{props.buttonText}</a>
   )
 }
 

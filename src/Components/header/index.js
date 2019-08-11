@@ -6,12 +6,12 @@ import ButtonFull from '../Button/ButtonFull'
 
 const Header = () => {
   return (
-    <header className="Header">
-      <div className="Navigation-left">
+    <header className="header-wrapper">
+      <div className="navigation-left">
         <Logo />
         <Navigation />
         </div>
-        <div className="Navigation-right">
+        <div className="navigation-right">
           <Search />
           <ButtonFull buttonText="Sign Up"/>
         </div>

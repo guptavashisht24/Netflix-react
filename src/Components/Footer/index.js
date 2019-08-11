@@ -7,10 +7,10 @@ const Footer = () => {
       <div className="container">
         <section className="link">
           <div className="logos">
-            <a href="#"><i className="fa fa-facebook-square fa-2x logo"></i></a>
-            <a href="#"><i className="fa fa-instagram fa-2x logo"></i></a>
-            <a href="#"><i className="fa fa-twitter fa-2x logo"></i></a>
-            <a href="#"><i className="fa fa-youtube-play fa-2x logo"></i></a>
+            <a href="#"><i className="fa fa-facebook-square fa-2x"></i></a>
+            <a href="#"><i className="fa fa-instagram fa-2x"></i></a>
+            <a href="#"><i className="fa fa-twitter fa-2x"></i></a>
+            <a href="#"><i className="fa fa-youtube-play fa-2x"></i></a>
           </div>
           <div className="sub-links">
             <ul>
