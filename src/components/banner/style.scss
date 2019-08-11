@@ -183,7 +183,7 @@ body {
   -webkit-transform: rotate(180deg);
   transform: rotate(180deg);
 }
-.pull-right{
+.pull-right {
   float: right;
 }
 
@@ -238,6 +238,10 @@ h2,.title-list .title {
   line-height: 1.4;
   margin-bottom: 1em;
 }
+.title-list .title h2 {
+  font-size: 20px;
+  margin-bottom: 0;
+}
 .title-list {
   padding: 20px 40px;
   box-sizing: border-box;
@@ -248,7 +252,7 @@ h2,.title-list .title {
   z-index: 4;
 }
 .title-list .titles-wrapper {
-  margin: 20px 0;
+  margin-bottom: 20px;
   width: calc(100vw - 80px);
   box-sizing: border-box;
 }
@@ -308,7 +312,6 @@ h2,.title-list .title {
 .item .overlay .plot {
   font-size: 14px;
   margin-top: 100px;
-  font-weight: 300;
   line-height: 1.6;
   opacity: 0;
   overflow: hidden;

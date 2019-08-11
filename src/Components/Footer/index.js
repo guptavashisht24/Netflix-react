@@ -1,10 +1,11 @@
 import React from 'react'
+import { Container } from 'react-bootstrap'
 import './styles.scss'
 
 const Footer = () => {
   return (
     <footer>
-      <div className="container">
+      <Container>
         <section className="link">
           <div className="logos">
             <a href="#"><i className="fa fa-facebook-square fa-2x"></i></a>
@@ -30,7 +31,7 @@ const Footer = () => {
           </div>
         </section>
           <p>&copy; 1997-2018 Netflix, Inc.</p>
-      </div>
+      </Container>
     </footer>
   )
 }
