@@ -3,11 +3,11 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
 module.exports = {
-  entry: ['babel-polyfill',path.join(__dirname, "src", "index.js")],
+  entry: ['babel-polyfill', path.join(__dirname, "./src/index.js")],
   output: {
-    path: path.join(__dirname, "build"),
-    filename: "bundle.js",
-    publicPath: '/',
+    path: path.join(__dirname, "dist"),
+    filename: "index_bundle.js",
+    //publicPath: '/',
   },
   module: {
     rules: [
@@ -30,12 +30,12 @@ module.exports = {
     ]
   },
   devServer: {
-    historyApiFallback: true,
+    //historyApiFallback: true,
   },
   plugins: [
     new HtmlWebpackPlugin({
       filename: "index.html",
-      template: path.join(__dirname, "src", "index.html")
+      template: path.join(__dirname, "./src/index.html")
     }),
     new MiniCssExtractPlugin({
       filename: "[name].css",
