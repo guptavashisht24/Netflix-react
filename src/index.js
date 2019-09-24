@@ -4,7 +4,7 @@ import { applyMiddleware, createStore } from 'redux'
 import thunk from 'redux-thunk'
 import logger from 'redux-logger'
 import { Provider } from 'react-redux'
-import { Route, HashRouter as Router, Switch } from 'react-router-dom'
+import { Route, BrowserRouter as Router, Switch } from 'react-router-dom'
 
 import Homepage from './Pages/Homepage'
 import MovieDetail from './Pages/MovieDetail'

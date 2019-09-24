@@ -7,7 +7,7 @@ module.exports = {
   output: {
     path: path.join(__dirname, "dist"),
     filename: "index_bundle.js",
-    //publicPath: '/',
+    publicPath: '/',
   },
   module: {
     rules: [
@@ -30,7 +30,7 @@ module.exports = {
     ]
   },
   devServer: {
-    //historyApiFallback: true,
+    historyApiFallback: true,
   },
   plugins: [
     new HtmlWebpackPlugin({
