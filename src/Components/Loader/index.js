@@ -4,7 +4,7 @@ class Loader extends Component {
   render() {
     return (
       <div className="logo-wrapper">
-        <div className="logo">
+        <div className="">
           <div className="netflix">
             <span></span>
             <span></span>
