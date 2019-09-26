@@ -12,7 +12,6 @@ class MoviePlayer extends Component {
 
   UNSAFE_componentWillMount () {
     this.movieId = this.props.match.params.id
-    console.log(this.movieId)
     this.props.getMovieTrailer(this.movieId)
   }
   render() {
@@ -23,7 +22,6 @@ class MoviePlayer extends Component {
         autoplay: 1
       }
     }
-    console.log("this.props.movieTrailerID", this.props.movieTrailerID)
     return (
       <div>
         <YouTube
@@ -37,6 +35,7 @@ class MoviePlayer extends Component {
 
 MoviePlayer.propTypes = {
   getMovieTrailer: PropTypes.func,
+  match: PropTypes.object,
   movieTrailerID: PropTypes.string,
   movie: PropTypes.object,
 }
@@ -45,13 +44,10 @@ const mapStateToProps = (state) =>  {
   const movieTrailerID = state.movieDetail.movieTrailers && Array.isArray(state.movieDetail.movieTrailers.data) && state.movieDetail.movieTrailers.data[0] && state.movieDetail.movieTrailers.data[0].key
   return {
   movieTrailerID
-  //movieTrailers: state.movieDetail.movieTrailers.data,
 }}
 
 const mapDispatchToProps = (dispatch) => ({
-  //getMovieDetail: (id) => dispatch(getMovieDetail(id)),
   getMovieTrailer: (id) => dispatch(getMovieTrailer(id)),
-  //getSimilarMovie: (id) => dispatch(getSimilarMovie(id))
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(MoviePlayer)
