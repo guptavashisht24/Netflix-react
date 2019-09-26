@@ -13,9 +13,10 @@ class MovieDetail extends Component {
     this.state = { key: 'overview', currentVideoId: ''}
   }
   componentDidMount() {
-    this.movieId = this.props.match.params.id
-    this.props.getMovieDetail(this.movieId)
-    this.props.getSimilarMovie(this.movieId)
+    const { match, getMovieDetail, getSimilarMovie } = this.props
+    this.movieId = match.params.id
+    getMovieDetail(this.movieId)
+    getSimilarMovie(this.movieId)
   }
   UNSAFE_componentWillReceiveProps(nextProps) {
     //console.log("tnextProps",nextProps)

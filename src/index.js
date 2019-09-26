@@ -8,6 +8,8 @@ import { Route, BrowserRouter as Router, Switch } from 'react-router-dom'
 
 import Homepage from './Pages/Homepage'
 import MovieDetail from './Pages/MovieDetail'
+import MoviePlayer from './Pages/MoviePlayer'
+
 import reducer from './Reducers'
 
 const App = () => {
@@ -17,7 +19,8 @@ const App = () => {
       <Router>
         <Switch>
           <Route exact path="/" component={Homepage} />
-          <Route exact path="/movie/:id" component={MovieDetail} />
+          {/* <Route exact path="/movie/:id" component={MovieDetail} /> */}
+          <Route exact path="/play/:id" component={MoviePlayer} />
         </Switch>
       </Router>
     </Provider>

@@ -29,7 +29,7 @@ class Homepage extends Component {
     this.props.getFeaturedMovies(this.categories)
   }
   render () {
-    const { featuredMovies: { movies, isLoading }, trendingMovies } = this.props
+    const { featuredMovies: { movies=[], isLoading }, trendingMovies } = this.props
     const renderFeaturedMovies = movies && movies.map(({ title, data}, index) => {
       return ( <MovieThumbnailList key={index} title={title} movieList={data} /> )
     })
