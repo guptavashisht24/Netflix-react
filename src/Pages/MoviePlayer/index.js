@@ -19,14 +19,15 @@ class MoviePlayer extends Component {
     const youtubePlayerConfig = {
       height: '390',
       width: '640',
-      // playerVars: { // https://developers.google.com/youtube/player_parameters
-      //   autoplay: 1
-      // }
+      playerVars: { // https://developers.google.com/youtube/player_parameters
+        autoplay: 1
+      }
     }
+    console.log("this.props.movieTrailerID", this.props.movieTrailerID)
     return (
       <div>
         <YouTube
-          videoId={this.props.movieID}
+          videoId={this.props.movieTrailerID}
           opts={youtubePlayerConfig}
         />
       </div>
@@ -36,13 +37,14 @@ class MoviePlayer extends Component {
 
 MoviePlayer.propTypes = {
   getMovieTrailer: PropTypes.func,
+  movieTrailerID: PropTypes.string,
   movie: PropTypes.object,
 }
 
 const mapStateToProps = (state) =>  {
-  //console.log("iddd",state.movieDetail.movieTrailers.data && Array.isArray(state.movieDetail.movieTrailers.data) && state.movieDetail.movieTrailers.data[0].id)
+  const movieTrailerID = state.movieDetail.movieTrailers && Array.isArray(state.movieDetail.movieTrailers.data) && state.movieDetail.movieTrailers.data[0] && state.movieDetail.movieTrailers.data[0].key
   return {
-  //movieTrailerID: state.movieDetail.movieTrailers.data && Array.isArray(state.movieDetail.movieTrailers.data) && state.movieDetail.movieTrailers.data[0].id,
+  movieTrailerID
   //movieTrailers: state.movieDetail.movieTrailers.data,
 }}
 
