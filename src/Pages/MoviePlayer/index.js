@@ -4,7 +4,7 @@ import YouTube from 'react-youtube'
 import { connect } from 'react-redux'
 
 import { getMovieTrailer } from '../../Actions'
-
+import { VideoWrapper } from './style'
 class MoviePlayer extends Component {
   constructor() {
     super()
@@ -16,19 +16,18 @@ class MoviePlayer extends Component {
   }
   render() {
     const youtubePlayerConfig = {
-      height: '390',
-      width: '640',
       playerVars: { // https://developers.google.com/youtube/player_parameters
         autoplay: 1
       }
     }
     return (
-      <div>
+      <VideoWrapper>
         <YouTube
           videoId={this.props.movieTrailerID}
           opts={youtubePlayerConfig}
+          className='youtubeIframe'
         />
-      </div>
+      </VideoWrapper>
     );
   }
 }

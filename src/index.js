@@ -7,7 +7,7 @@ import { Provider } from 'react-redux'
 import { Route, BrowserRouter as Router, Switch } from 'react-router-dom'
 
 import Homepage from './Pages/Homepage'
-import MovieDetail from './Pages/MovieDetail'
+//import MovieDetail from './Pages/MovieDetail'
 import MoviePlayer from './Pages/MoviePlayer'
 
 import reducer from './Reducers'
