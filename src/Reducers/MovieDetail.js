@@ -7,7 +7,7 @@ let initialState = {
     data: []
   },
   movieTrailers: {
-    isLoading: false,
+    isLoading: true,
     data: []
   },
   success: false,
