@@ -38,18 +38,18 @@ class MoviePlayer extends Component {
         iv_load_policy: 3,
       }
     }
-    const renderVideo =  isLoading
+    const renderLoader =  isLoading
       ? <Loader /> : null
 
     return (
       <VideoWrapper>
-        {renderVideo}
+        {renderLoader}
         <YouTube
-        videoId={this.props.movieTrailerID}
-        opts={youtubePlayerConfig}
-        className='youtubeIframe'
-        onPlay={this.handleReady}
-      />
+          videoId={this.props.movieTrailerID}
+          opts={youtubePlayerConfig}
+          className='youtubeIframe'
+          onPlay={this.handleReady}
+        />
       </VideoWrapper>
     );
   }

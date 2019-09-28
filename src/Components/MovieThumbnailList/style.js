@@ -10,7 +10,20 @@ export const ThumbnailWrapper = styled.div`{
   z-index: 4;
 }`
 
-export const Title =  styled.h2`{
+export const Title = styled.h2`{
   font-size: 20px;
   margin-bottom: 0;
+}`
+
+export const MovieDetail = styled.div`{
+
+}`
+
+export const List = styled.ul`{
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow-x: visible;
+  display: flex;
+  flex-wrap: nowrap;
 }`

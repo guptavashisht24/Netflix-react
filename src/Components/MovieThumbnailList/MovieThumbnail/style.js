@@ -1,5 +1,9 @@
 import styled from 'styled-components'
 
+export const ListItem = styled.li`{
+  width: 16.66%;
+}`
+
 export const Overlay = styled.div`{
   background: -webkit-linear-gradient(top, rgba(0, 0, 0, 0.75) 0%, transparent 100%);
   /* Chrome10-25,Safari5.1-6 */
