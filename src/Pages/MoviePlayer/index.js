@@ -38,7 +38,6 @@ class MoviePlayer extends Component {
         iv_load_policy: 3,
       }
     }
-    console.log(this.state.isLoading,"thisstate.isloading")
     const renderVideo =  isLoading
       ? <Loader /> : null
 
@@ -58,18 +57,14 @@ class MoviePlayer extends Component {
 
 MoviePlayer.propTypes = {
   getMovieTrailer: PropTypes.func,
-  isLoading: PropTypes.bool,
   match: PropTypes.object,
   movieTrailerID: PropTypes.string,
-  movie: PropTypes.object,
 }
 
 const mapStateToProps = (state) =>  {
-  const movieTrailerID = state.movieDetail.movieTrailers && Array.isArray(state.movieDetail.movieTrailers.data) && state.movieDetail.movieTrailers.data[0] && state.movieDetail.movieTrailers.data[0].key
-  //const { isLoading } = state.movieDetail.movieTrailers
+  const movieTrailerID = state.movieDetail.movieTrailers && Array.isArray(state.movieDetail.movieTrailers.data) && state.movieDetail.movieTrailers.data[0] && state.movieDetail.movieTrailers.data[0].key || ''
   return {
   movieTrailerID,
-  //isLoading,
 }}
 
 const mapDispatchToProps = (dispatch) => ({

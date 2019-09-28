@@ -1,15 +1,13 @@
 import PropTypes from "prop-types";
 import React from "react";
-import MovieThumbnail from "./MovieThumbnail.js";
+import MovieThumbnail from "./MovieThumbnail";
 
-class MovieThumbnailList extends React.Component {
-  render() {
-    let { movieList } = this.props
+function MovieThumbnailList({ movieList=[], title }) {
     let renderMovieDetails = "";
     if (movieList) {
       renderMovieDetails = movieList.map(({backdrop_path, overview, vote_average,id, name, original_title, title,}, i) => {
         let backDrop, movieTitle, description, rating, movieId;
-        if (i < 5) {
+        if (1) {
           backDrop = "http://image.tmdb.org/t/p/original" + backdrop_path;
           description = overview;
           rating = vote_average;
@@ -38,12 +36,11 @@ class MovieThumbnailList extends React.Component {
     return (
       <div className="title-list">
         <div className="title">
-          <h2>{this.props.title}</h2>
+          <h2>{title}</h2>
           <div className="titles-wrapper">{renderMovieDetails}</div>
         </div>
       </div>
     );
-  }
 }
 
 MovieThumbnailList.propTypes = {
