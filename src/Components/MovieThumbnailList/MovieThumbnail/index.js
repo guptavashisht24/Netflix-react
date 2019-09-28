@@ -2,16 +2,18 @@ import PropTypes from 'prop-types'
 import React from "react";
 import { Link } from 'react-router-dom'
 
+import { Movie, Overlay, Title, Rating, Plot } from './style'
+
 function MovieThumbnail(props) {
   return (
     <Link to={`/play/${props.id}`}>
-      <div className="item" style={{ backgroundImage: "url(" + props.backDrop + ")" }}>
-        <div className="overlay">
-          <div className="title">{props.title}</div>
-          <div className="rating">{props.rating} / 10</div>
-          <div className="plot">{props.plot}</div>
-        </div>
-      </div>
+      <Movie backgroundImage={props.backDrop }>
+        <Overlay>
+          <Title>{props.title}</Title>
+          <Rating>{props.rating} / 10</Rating>
+          <Plot>{props.plot}</Plot>
+        </Overlay>
+      </Movie>
     </Link>
   );
 }

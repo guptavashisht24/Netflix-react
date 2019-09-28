@@ -1,7 +1,16 @@
 import styled from 'styled-components'
 
-export const VideoWrapper = styled.div`{
+export const ThumbnailWrapper = styled.div`{
+  padding: 0px 40px;
+  box-sizing: border-box;
+  -webkit-transition: opacity 3s ease;
+  transition: opacity 3s ease;
+  /*opacity: 0;*/
   position: relative;
-  padding-bottom: 56.25%;
-  height: 0;
+  z-index: 4;
+}`
+
+export const Title =  styled.h2`{
+  font-size: 20px;
+  margin-bottom: 0;
 }`

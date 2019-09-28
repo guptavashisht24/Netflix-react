@@ -2,6 +2,7 @@ import PropTypes from "prop-types";
 import React from "react";
 import MovieThumbnail from "./MovieThumbnail";
 
+import { ThumbnailWrapper, Title } from './style'
 function MovieThumbnailList({ movieList=[], title }) {
     let renderMovieDetails = "";
     if (movieList) {
@@ -34,12 +35,13 @@ function MovieThumbnailList({ movieList=[], title }) {
       });
     }
     return (
-      <div className="title-list">
+      <ThumbnailWrapper>
         <div className="title">
-          <h2>{title}</h2>
-          <div className="titles-wrapper">{renderMovieDetails}</div>
+          <Title>{title}</Title>
+          {/* <div className="titles-wrapper">{renderMovieDetails}</div> */}
+          {renderMovieDetails}
         </div>
-      </div>
+      </ThumbnailWrapper>
     );
 }
 
