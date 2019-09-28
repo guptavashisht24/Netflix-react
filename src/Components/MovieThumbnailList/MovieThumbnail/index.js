@@ -13,7 +13,7 @@ function MovieThumbnail({ backDrop, id, plot, rating, showDetailButton, showMovi
             <Title>{title}</Title>
             <Rating>{rating} / 10</Rating>
             <Plot>{plot}</Plot>
-            {showDetailButton && <button style={{cursor:'pointer'}} onClick={(e) => showMovieDetail(e)}>show more</button> }
+            {showDetailButton && <button style={{cursor:'pointer'}} onClick={(e) => showMovieDetail(e, id)}>show more</button> }
           </Overlay>
         </Movie>
       </Link>

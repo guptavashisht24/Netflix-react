@@ -14,7 +14,8 @@ class MovieDetail extends Component {
   }
   componentDidMount() {
     const { match, getMovieDetail, getSimilarMovie } = this.props
-    this.movieId = match.params.id
+    //this.movieId = match.params.id
+    this.movieId = this.props.movieId
     getMovieDetail(this.movieId)
     getSimilarMovie(this.movieId)
   }

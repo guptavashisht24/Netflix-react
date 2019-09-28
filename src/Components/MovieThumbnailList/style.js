@@ -15,7 +15,7 @@ export const Title = styled.h2`{
   margin-bottom: 0;
 }`
 
-export const MovieDetail = styled.div`{
+export const MovieDetailWrapper = styled.div`{
 
 }`
 

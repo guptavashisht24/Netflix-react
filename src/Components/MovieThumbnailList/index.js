@@ -1,11 +1,13 @@
 import PropTypes from "prop-types";
 import React, { useState } from "react";
 import MovieThumbnail from "./MovieThumbnail";
+import MovieDetail from "../../Components/MovieDetail";
 
-import { MovieDetail, List, ThumbnailWrapper, Title } from './style'
+import { MovieDetailWrapper, List, ThumbnailWrapper, Title } from './style'
 
 function MovieThumbnailList({ movieList=[], title }) {
   const [ isMovieDetailVisibile, toggleMovieDetailVisibility ] = useState(false)
+  const [ movieId, setMovieId ] = useState(0)
   let renderMovieDetails = "";
   if (movieList) {
     renderMovieDetails = movieList.map(({backdrop_path, overview, vote_average,id, name, original_title, title,}, i) => {
@@ -30,10 +32,11 @@ function MovieThumbnailList({ movieList=[], title }) {
             plot={description}
             backDrop={backDrop}
             rating={rating}
-            showMovieDetail={(e) => {
+            showMovieDetail={(e, movieId) => {
                 console.log("easdasd")
+                setMovieId(movieId)
                 toggleMovieDetailVisibility(!isMovieDetailVisibile)
-              e.preventDefault()
+                e.preventDefault()
               // alert("called")
             }}
             showDetailButton={!isMovieDetailVisibile}
@@ -49,9 +52,10 @@ function MovieThumbnailList({ movieList=[], title }) {
       <List>
         {renderMovieDetails}
       </List>
-      {isMovieDetailVisibile && <MovieDetail>
+      {isMovieDetailVisibile && <MovieDetailWrapper>
         hello world
-      </MovieDetail> }
+        <MovieDetail movieId={movieId} />
+      </MovieDetailWrapper> }
     </ThumbnailWrapper>
   );
 }
