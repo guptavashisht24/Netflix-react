@@ -1,7 +1,15 @@
 import styled from 'styled-components'
 
 export const ListItem = styled.li`{
-  width: 16.66%;
+  min-width: 16.66%;
+  padding: 0 2px;
+
+  &:first-child {
+    padding-left: 0;
+  }
+  &:last-child {
+    padding-right: 0;
+  }
 }`
 
 export const Overlay = styled.div`{
@@ -51,8 +59,8 @@ export const Plot = styled.div`{
 }`
 
 export const Movie = styled.div`{
-  width: calc(20% - 10px);
-  min-width: calc(20% - 10px);
+  //width: calc(20% - 10px);
+  //min-width: calc(20% - 10px);
   background-image: url(${props => props.backgroundImage || ''});
   background-position: center;
   background-size: 100%;

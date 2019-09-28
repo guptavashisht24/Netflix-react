@@ -7,7 +7,7 @@ import { ListItem, Movie, Overlay, Plot, Title, Rating } from './style'
 function MovieThumbnail({ backDrop, id, plot, rating, showDetailButton, showMovieDetail, title}) {
   return (
     <ListItem>
-      <Link to={`/play/${id}`}>
+      <Link to={`/play/${id}`} style={{display:'block', width: '100%'}}>
         <Movie backgroundImage={backDrop }>
           <Overlay>
             <Title>{title}</Title>
