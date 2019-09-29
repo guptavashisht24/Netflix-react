@@ -12,36 +12,33 @@ function MovieThumbnailList({ movieList=[], title }) {
   if (movieList) {
     renderMovieThumbnail = movieList.map(({backdrop_path, overview, vote_average,id, name, original_title, title,}, i) => {
       let backDrop, movieTitle, description, rating, movieId;
-      if (1) {
-        backDrop = "http://image.tmdb.org/t/p/original" + backdrop_path;
-        description = overview;
-        rating = vote_average;
-        movieId = id
-        if (!name) {
-          movieTitle = original_title;
-        } else if (title) {
-          movieTitle = title;
-        } else {
-          movieTitle = name;
-        }
-        return (
-          <MovieThumbnail
-            key={i}
-            title={movieTitle}
-            id={movieId}
-            plot={description}
-            backDrop={backDrop}
-            rating={rating}
-            showMovieDetail={(e, movieId) => {
-              setMovieId(movieId)
-              toggleMovieDetailVisibility(!isMovieDetailVisibile)
-              e.preventDefault()
-            }}
-            showDetailButton={!isMovieDetailVisibile}
-          />
-        );
+      backDrop = "http://image.tmdb.org/t/p/original" + backdrop_path;
+      description = overview;
+      rating = vote_average;
+      movieId = id
+      if (!name) {
+        movieTitle = original_title;
+      } else if (title) {
+        movieTitle = title;
+      } else {
+        movieTitle = name;
       }
-      return <div key={i} />;
+      return (
+        <MovieThumbnail
+          key={i}
+          title={movieTitle}
+          id={movieId}
+          plot={description}
+          backDrop={backDrop}
+          rating={rating}
+          showMovieDetail={(e, movieId) => {
+            setMovieId(movieId)
+            toggleMovieDetailVisibility(!isMovieDetailVisibile)
+            e.preventDefault()
+          }}
+          showDetailButton={!isMovieDetailVisibile}
+        />
+      );
     });
   }
 
