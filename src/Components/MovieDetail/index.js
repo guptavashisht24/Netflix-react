@@ -64,7 +64,7 @@ class MovieDetail extends Component {
           </Col>
           <Col sm={8}>
             <CloseIcon onClick={onClose}>
-              X
+              <i className="fa fa-times fa-2x" aria-hidden="true"></i>
             </CloseIcon>
             <Heading>{original_title}</Heading>
             <RatingWrapper>

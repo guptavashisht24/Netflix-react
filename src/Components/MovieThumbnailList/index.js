@@ -8,9 +8,9 @@ import { MovieDetailWrapper, List, ThumbnailWrapper, Title } from './style'
 function MovieThumbnailList({ movieList=[], title }) {
   const [ isMovieDetailVisibile, toggleMovieDetailVisibility ] = useState(false)
   const [ movieId, setMovieId ] = useState(0)
-  let renderMovieDetails = "";
+  let renderMovieThumbnail = "";
   if (movieList) {
-    renderMovieDetails = movieList.map(({backdrop_path, overview, vote_average,id, name, original_title, title,}, i) => {
+    renderMovieThumbnail = movieList.map(({backdrop_path, overview, vote_average,id, name, original_title, title,}, i) => {
       let backDrop, movieTitle, description, rating, movieId;
       if (1) {
         backDrop = "http://image.tmdb.org/t/p/original" + backdrop_path;
@@ -44,11 +44,12 @@ function MovieThumbnailList({ movieList=[], title }) {
       return <div key={i} />;
     });
   }
+
   return (
     <ThumbnailWrapper>
       <Title>{title}</Title>
       <List>
-        {renderMovieDetails}
+        {renderMovieThumbnail}
       </List>
       {isMovieDetailVisibile && <MovieDetailWrapper>
         <MovieDetail movieId={movieId} onClose={() => toggleMovieDetailVisibility(false)} />

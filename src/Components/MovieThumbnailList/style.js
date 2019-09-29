@@ -5,7 +5,6 @@ export const ThumbnailWrapper = styled.div`{
   box-sizing: border-box;
   -webkit-transition: opacity 3s ease;
   transition: opacity 3s ease;
-  /*opacity: 0;*/
   position: relative;
   z-index: 4;
 }`
@@ -16,7 +15,9 @@ export const Title = styled.h2`{
 }`
 
 export const MovieDetailWrapper = styled.div`{
-
+  transition: height 300ms ease-in;
+  //height: ${(props) => props.show ? 'auto': 0};
+  //overflow: hidden;
 }`
 
 export const List = styled.ul`{
