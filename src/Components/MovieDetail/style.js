@@ -2,7 +2,8 @@ import styled from 'styled-components'
 import { Container } from 'react-bootstrap'
 
 export const Grid = styled(Container)`
-  margin-top: 125px;
+  //margin-top: 125px;
+  position: relative;
 `
 export const Image = styled.img`
   height: auto;
@@ -10,6 +11,11 @@ export const Image = styled.img`
   max-width: 300px;
 `
 
+export const CloseIcon = styled.div`
+  position: absolute;
+  cursor: pointer;
+  right: 0;
+`
 export const Heading = styled.h2`
   font-size: 35px;
   font-weight: 400;

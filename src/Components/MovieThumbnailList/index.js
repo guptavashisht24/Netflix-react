@@ -51,7 +51,7 @@ function MovieThumbnailList({ movieList=[], title }) {
         {renderMovieDetails}
       </List>
       {isMovieDetailVisibile && <MovieDetailWrapper>
-        <MovieDetail movieId={movieId} />
+        <MovieDetail movieId={movieId} onClose={() => toggleMovieDetailVisibility(false)} />
       </MovieDetailWrapper> }
     </ThumbnailWrapper>
   );
