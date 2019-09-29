@@ -33,11 +33,9 @@ function MovieThumbnailList({ movieList=[], title }) {
             backDrop={backDrop}
             rating={rating}
             showMovieDetail={(e, movieId) => {
-                console.log("easdasd")
-                setMovieId(movieId)
-                toggleMovieDetailVisibility(!isMovieDetailVisibile)
-                e.preventDefault()
-              // alert("called")
+              setMovieId(movieId)
+              toggleMovieDetailVisibility(!isMovieDetailVisibile)
+              e.preventDefault()
             }}
             showDetailButton={!isMovieDetailVisibile}
           />
@@ -53,7 +51,6 @@ function MovieThumbnailList({ movieList=[], title }) {
         {renderMovieDetails}
       </List>
       {isMovieDetailVisibile && <MovieDetailWrapper>
-        hello world
         <MovieDetail movieId={movieId} />
       </MovieDetailWrapper> }
     </ThumbnailWrapper>

@@ -1,8 +1,8 @@
 import PropTypes from 'prop-types'
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import YouTube from 'react-youtube'
-import { Row, Col, Tabs, Tab, Button } from 'react-bootstrap'
+
+import { Row, Col, Tabs, Tab } from 'react-bootstrap'
 import { getMovieDetail, getSimilarMovie, getMovieTrailer } from '../../Actions'
 import Header from '../../Components/Header'
 import  { Grid, Image, Heading, List, TabbedNavigation, RatingWrapper, Rating, Description, Features, Label } from './style'
@@ -13,33 +13,27 @@ class MovieDetail extends Component {
     this.state = { key: 'overview', currentVideoId: ''}
   }
   componentDidMount() {
-    const { match, getMovieDetail, getSimilarMovie } = this.props
-    //this.movieId = match.params.id
-    this.movieId = this.props.movieId
+    const { movieId, getMovieDetail, getSimilarMovie } = this.props
+    this.movieId = movieId
     getMovieDetail(this.movieId)
     getSimilarMovie(this.movieId)
   }
-  UNSAFE_componentWillReceiveProps(nextProps) {
-    //console.log("tnextProps",nextProps)
-    //console.log("UNSAFE_componentWillReceiveProps called",nextProps)
-    if(nextProps.movieTrailers !== this.props.movieTrailers) {
-      //this.setState({currentVideoId:nextProps.movieTrailers[0].key})
-      // console.log("this.props.movieTrailers",this.props)
-    }
-    //console.log(this.state)
-  }
+  // UNSAFE_componentWillReceiveProps(nextProps) {
+  //   //console.log("tnextProps",nextProps)
+  //   //console.log("UNSAFE_componentWillReceiveProps called",nextProps)
+  //   if(nextProps.movieTrailers !== this.props.movieTrailers) {
+  //     //this.setState({currentVideoId:nextProps.movieTrailers[0].key})
+  //     // console.log("this.props.movieTrailers",this.props)
+  //   }
+  //   //console.log(this.state)
+  // }
   handleTabSelect = (key) => {
     if(key==='trailer' && !this.props.movieTrailers.length >= 1 ) {
       this.props.getMovieTrailer(this.movieId)
     }
     this.setState({ key })
   }
-  handlePreviousVideo = () => {
 
-  }
-  handleNextVideo = () => {
-
-  }
   render () {
     const { adult, cast:movieCast, crew, poster_path, original_title, overview, genres, vote_average, release_date, runtime } = this.props.movie
     const renderGenres = genres && genres.map(({ name }, index) => (
@@ -58,14 +52,6 @@ class MovieDetail extends Component {
         renderDirector.push(item.name)
       }
     })
-    const youtubePlayerConfig = {
-      height: '390',
-      width: '640',
-      // playerVars: { // https://developers.google.com/youtube/player_parameters
-      //   autoplay: 1
-      // }
-    }
-    //console.log(this.props.movieTrailers,"render")
     return (
       <div>
         <Header />
@@ -99,12 +85,7 @@ class MovieDetail extends Component {
                     </Features>
                   </Tab>
                   <Tab eventKey="trailer" title="Trailers & more">
-                    <Button onClick={this.handlePreviousVideo}>Previous Trailer</Button>
-                    <Button onClick={this.handleNextVideo}>Next Trailer</Button>
-                    <YouTube
-                      videoId="2g811Eo7K8U"
-                      opts={youtubePlayerConfig}
-                    />
+
                   </Tab>
                   <Tab eventKey="more" title="More like this">
                     More like this
@@ -128,6 +109,7 @@ MovieDetail.propTypes = {
   getSimilarMovie: PropTypes.func,
   match: PropTypes.object,
   movie: PropTypes.object,
+  movieId: PropTypes.string,
   movieTrailers: PropTypes.array,
 }
 

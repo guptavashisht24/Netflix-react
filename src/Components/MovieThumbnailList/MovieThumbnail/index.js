@@ -1,4 +1,4 @@
-import PropTypes from 'prop-types'
+import { number, string, bool, func } from 'prop-types'
 import React from "react";
 import { Link } from 'react-router-dom'
 
@@ -22,12 +22,13 @@ function MovieThumbnail({ backDrop, id, plot, rating, showDetailButton, showMovi
 }
 
 MovieThumbnail.propTypes = {
-  id: PropTypes.number,
-  title: PropTypes.string,
-  backDrop: PropTypes.string,
-  plot: PropTypes.string,
-  rating: PropTypes.number,
-  showMovieDetail: PropTypes.func,
+  id: number,
+  title: string,
+  backDrop: string,
+  plot: string,
+  rating: number,
+  showMovieDetail: func,
+  showDetailButton: bool,
 }
 
 export default MovieThumbnail;
