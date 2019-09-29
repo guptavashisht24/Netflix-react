@@ -10,7 +10,7 @@ import  { Grid, Image, Heading, List, TabbedNavigation, RatingWrapper, Rating, D
 class MovieDetail extends Component {
   constructor () {
     super()
-    this.state = { key: 'overview', currentVideoId: ''}
+    this.state = { key: 'overview' }
   }
   componentDidMount() {
     const { movieId, getMovieDetail, getSimilarMovie } = this.props
@@ -18,15 +18,6 @@ class MovieDetail extends Component {
     getMovieDetail(this.movieId)
     getSimilarMovie(this.movieId)
   }
-  // UNSAFE_componentWillReceiveProps(nextProps) {
-  //   //console.log("tnextProps",nextProps)
-  //   //console.log("UNSAFE_componentWillReceiveProps called",nextProps)
-  //   if(nextProps.movieTrailers !== this.props.movieTrailers) {
-  //     //this.setState({currentVideoId:nextProps.movieTrailers[0].key})
-  //     // console.log("this.props.movieTrailers",this.props)
-  //   }
-  //   //console.log(this.state)
-  // }
   handleTabSelect = (key) => {
     if(key==='trailer' && !this.props.movieTrailers.length >= 1 ) {
       this.props.getMovieTrailer(this.movieId)
