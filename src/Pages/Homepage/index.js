@@ -13,18 +13,19 @@ class Homepage extends Component {
       title: "Top Rated Movies",
       url: "movie/top_rated",
     },
-    {
-      title: "Now Playing",
-      url: "movie/now_playing"
-    },
-    {
-      title: "Upcoming Movies",
-      url: "movie/upcoming"
-    },
-    {
-      title: "Top Rated TV shows",
-      url: "tv/popular",
-    }]
+    // {
+    //   title: "Now Playing",
+    //   url: "movie/now_playing"
+    // },
+    // {
+    //   title: "Upcoming Movies",
+    //   url: "movie/upcoming"
+    // },
+    // {
+    //   title: "Top Rated TV shows",
+    //   url: "tv/popular",
+    // }]
+  ]
     this.props.getTrendingMovies()
     this.props.getFeaturedMovies(this.categories)
   }

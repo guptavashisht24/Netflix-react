@@ -28,3 +28,17 @@ export const List = styled.ul`{
   display: flex;
   flex-wrap: nowrap;
 }`
+
+export const NavigationWrapper = styled.div`{
+
+}`
+
+export const NavigationIcon = styled.button`{
+  font-size: 16px;
+  border: none;
+  margin: 0 7.5px;
+  color: #010101;
+  cursor: pointer;
+  transition: all 300ms ease-in;
+  outline: none;
+}`
