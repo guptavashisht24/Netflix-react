@@ -1,12 +1,12 @@
 import React from 'react'
-import { Container } from 'react-bootstrap'
+import { Container, Row } from 'react-bootstrap'
 import './styles.scss'
 
 const Footer = () => {
   return (
     <footer>
       <Container>
-        <section className="link">
+        <Row className="link">
           <div className="logos">
             <a href="#"><i className="fa fa-facebook-square fa-2x"></i></a>
             <a href="#"><i className="fa fa-instagram fa-2x"></i></a>
@@ -29,8 +29,8 @@ const Footer = () => {
               <li><a href="#">Contact Us</a></li>
             </ul>
           </div>
-        </section>
-          <p>&copy; 1997-2018 Netflix, Inc.</p>
+        </Row>
+          <p style={{textAlign: 'center'}}>&copy; 1997-2018 Netflix, Inc.</p>
       </Container>
     </footer>
   )

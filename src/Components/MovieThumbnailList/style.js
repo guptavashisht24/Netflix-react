@@ -1,5 +1,10 @@
 import styled from 'styled-components'
 
+export const Collapse = styled.div` {
+  transition: height 250ms ease-in;
+  height: ${props => props.height}px;
+}
+`
 export const ThumbnailWrapper = styled.div`{
   box-sizing: border-box;
   transition: opacity 3s ease;
@@ -12,12 +17,6 @@ export const ThumbnailWrapper = styled.div`{
 export const Title = styled.h2`{
   font-size: 20px;
   margin-bottom: 0;
-}`
-
-export const MovieDetailWrapper = styled.div`{
-  transition: height 300ms ease-in;
-  //height: ${(props) => props.show ? 'auto': 0};
-  //overflow: hidden;
 }`
 
 export const List = styled.ul`{

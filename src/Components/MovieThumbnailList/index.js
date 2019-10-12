@@ -1,9 +1,9 @@
 import PropTypes from "prop-types";
 import React, { Component } from "react";
+
 import MovieThumbnail from "./MovieThumbnail";
 import MovieDetail from "../../Components/MovieDetail";
-
-import { MovieDetailWrapper, NavigationIcon, List, ListWrapper, ThumbnailWrapper, Title } from './style'
+import { Collapse, NavigationIcon, List, ListWrapper, ThumbnailWrapper, Title } from './style'
 
 class MovieThumbnailList extends Component {
   constructor() {
@@ -13,12 +13,16 @@ class MovieThumbnailList extends Component {
       movieId: 0,
       movieThumbnailsInARow: 0,
       selectedIndex: 0,
+      height: 0,
     }
   }
 
   componentDidMount() {
     this.setMovieThumbnailCount();
     window.addEventListener('resize', this.setMovieThumbnailCount);
+    this.setState({
+      height: this.movieDetailRef.clientHeight,
+    })
   }
   
   toggleMovieDetailVisibility = () => {
@@ -118,12 +122,6 @@ class MovieThumbnailList extends Component {
         </>
       )
     : null;
-    const renderMovieDetail = isMovieDetailVisibile 
-      ? ( <MovieDetailWrapper>
-            <MovieDetail movieId={movieId} onClose={() => this.toggleMovieDetailVisibility(false)} />
-          </MovieDetailWrapper>
-        )
-      : null    
     return (
       <ThumbnailWrapper>
         <Title>{title}</Title>
@@ -133,7 +131,12 @@ class MovieThumbnailList extends Component {
             {renderMovieThumbnail}
           </List>
         </ListWrapper>
-        {renderMovieDetail}
+        {/* {renderMovieDetail} */}
+        <Collapse height={isMovieDetailVisibile ? this.state.height : 0 }>
+          <div ref={(ele) => { this.movieDetailRef=ele }}>
+            <MovieDetail movieId={movieId} onClose={() => this.toggleMovieDetailVisibility(false)} />
+          </div>
+        </Collapse>
     </ThumbnailWrapper>
     )
   }

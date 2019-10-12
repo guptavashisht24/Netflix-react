@@ -62,7 +62,7 @@ export const Movie = styled.div`{
   background-image: url(${props => props.backgroundImage || ''});
   background-position: center;
   background-size: 100%;
-  height: 200px;
+  // height: 200px;
   display: inline-block;
   background-repeat: no-repeat;
   overflow: hidden;
@@ -78,14 +78,14 @@ export const Movie = styled.div`{
   }
 
   &:hover {
-    background-size: 150%;
+    // background-size: 150%;
   }
   &:hover ${Overlay} {
     opacity: 1;
     pointer-events: all;
   }
   &:hover ${Plot} {
-    margin-top: 10px;
+    // margin-top: 10px;
     opacity: 1;
   }
   &:hover ${Title} {
