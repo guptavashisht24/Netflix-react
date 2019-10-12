@@ -59,8 +59,6 @@ export const Plot = styled.div`{
 }`
 
 export const Movie = styled.div`{
-  //width: calc(20% - 10px);
-  //min-width: calc(20% - 10px);
   background-image: url(${props => props.backgroundImage || ''});
   background-position: center;
   background-size: 100%;

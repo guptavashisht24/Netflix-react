@@ -1,6 +1,8 @@
 import PropTypes from 'prop-types'
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
+import { Container } from 'react-bootstrap'
+
 import Header from '../../Components/Header'
 import Footer from '../../Components/Footer'
 import Banner from '../../Components/Banner'
@@ -40,7 +42,9 @@ class Homepage extends Component {
       <div>
         <Header />
         <Banner trendingMovie={trendingMovies && trendingMovies[0]} />
-        {renderFeaturedMovies}
+        <Container>
+          {renderFeaturedMovies}
+        </Container>
         <Footer />
       </div>
     )

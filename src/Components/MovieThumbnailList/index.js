@@ -3,7 +3,7 @@ import React, { Component } from "react";
 import MovieThumbnail from "./MovieThumbnail";
 import MovieDetail from "../../Components/MovieDetail";
 
-import { MovieDetailWrapper, NavigationWrapper, List, ThumbnailWrapper, Title } from './style'
+import { MovieDetailWrapper, NavigationIcon, List, ListWrapper, ThumbnailWrapper, Title } from './style'
 
 class MovieThumbnailList extends Component {
   constructor() {
@@ -108,22 +108,14 @@ class MovieThumbnailList extends Component {
     }    
     const renderNavigation = slidesCount >= 1 
       ? (
-        <NavigationWrapper>
-          <button className={`navigation-icon ${ selectedIndex === 0 ? 'disabled' : ''}`}
-            onClick={this.decrementSelectedIndex}
-            disabled={selectedIndex === 0 ? true : false}
-          >
+        <>
+          <NavigationIcon position="left" onClick={this.decrementSelectedIndex} disabled={selectedIndex === 0 ? true : false}>
             <i className="fa fa-chevron-left" aria-hidden="true"></i>
-          </button>
-          <button
-            className={`navigation-icon ${
-              selectedIndex === slidesCount - 1 ? 'disabled' : ''
-            }`}
-            onClick={this.incrementSelectedIndex}
-          >
+          </NavigationIcon>
+          <NavigationIcon position="right" onClick={this.incrementSelectedIndex} disabled={selectedIndex === slidesCount - 1 ? true : false}>
             <i className="fa fa-chevron-right" aria-hidden="true"></i>
-          </button>
-        </NavigationWrapper>
+          </NavigationIcon>
+        </>
       )
     : null;
     const renderMovieDetail = isMovieDetailVisibile 
@@ -135,10 +127,12 @@ class MovieThumbnailList extends Component {
     return (
       <ThumbnailWrapper>
         <Title>{title}</Title>
-        {renderNavigation}
-        <List style={style}>
-          {renderMovieThumbnail}
-        </List>
+        <ListWrapper>
+          {renderNavigation}
+          <List style={style}>
+            {renderMovieThumbnail}
+          </List>
+        </ListWrapper>
         {renderMovieDetail}
     </ThumbnailWrapper>
     )
