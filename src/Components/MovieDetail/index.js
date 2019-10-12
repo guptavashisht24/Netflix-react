@@ -12,12 +12,19 @@ class MovieDetail extends Component {
     super()
     this.state = { key: 'overview' }
   }
+
   componentDidMount() {
     const { movieId, getMovieDetail, getSimilarMovie } = this.props
     this.movieId = movieId
     getMovieDetail(this.movieId)
     getSimilarMovie(this.movieId)
   }
+
+  componentDidUpdate() {
+    this.props.setMovieDetailWrapperHeight()
+  }
+
+
   handleTabSelect = (key) => {
     if(key==='trailer' && !this.props.movieTrailers.length >= 1 ) {
       this.props.getMovieTrailer(this.movieId)
@@ -38,6 +45,8 @@ class MovieDetail extends Component {
       release_date,
       runtime
     } = this.props.movie
+    if(!this.props.movieId)
+      return null
     const { onClose } = this.props
     const renderGenres = genres && genres.map(({ name }, index) => (
       index < genres.length - 1 ? ` ${name}, ` : name
@@ -116,6 +125,7 @@ MovieDetail.propTypes = {
   movieId: string,
   movieTrailers: array,
   onClose: func,
+  setMovieDetailWrapperHeight: func,
 }
 
 const mapStateToProps = (state) =>  ({

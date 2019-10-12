@@ -20,11 +20,16 @@ class MovieThumbnailList extends Component {
   componentDidMount() {
     this.setMovieThumbnailCount();
     window.addEventListener('resize', this.setMovieThumbnailCount);
-    this.setState({
-      height: this.movieDetailRef.clientHeight,
-    })
   }
   
+  setMovieDetailWrapperHeight = () => {
+    if(this.movieDetailRef !== null) {
+      this.setState({
+        height: this.movieDetailRef.clientHeight,
+      })
+    } 
+  }
+
   toggleMovieDetailVisibility = () => {
     this.setState((prevState) => ({
       isMovieDetailVisibile: !prevState.isMovieDetailVisibile
@@ -74,35 +79,35 @@ class MovieThumbnailList extends Component {
     if(!movieList.length)
       return null
     const renderMovieThumbnail = movieList.map(({backdrop_path, overview, vote_average,id, name, original_title, title,}, i) => {
-        let backDrop, movieTitle, description, rating, movieId;
-        backDrop = "http://image.tmdb.org/t/p/original" + backdrop_path;
-        description = overview;
-        rating = vote_average;
-        movieId = id
-        if (!name) {
-          movieTitle = original_title;
-        } else if (title) {
-          movieTitle = title;
-        } else {
-          movieTitle = name;
-        }
-        return (
-          <MovieThumbnail
-            key={i}
-            title={movieTitle}
-            id={movieId}
-            plot={description}
-            backDrop={backDrop}
-            rating={rating}
-            showMovieDetail={(e, movieId) => {
-              this.setMovieId(movieId)
-              this.toggleMovieDetailVisibility(!isMovieDetailVisibile)
-              e.preventDefault()
-            }}
-            showDetailButton={!isMovieDetailVisibile}
-          />
-        );
-      });
+      let backDrop, movieTitle, description, rating, movieId;
+      backDrop = "http://image.tmdb.org/t/p/original" + backdrop_path;
+      description = overview;
+      rating = vote_average;
+      movieId = id
+      if (!name) {
+        movieTitle = original_title;
+      } else if (title) {
+        movieTitle = title;
+      } else {
+        movieTitle = name;
+      }
+      return (
+        <MovieThumbnail
+          key={i}
+          title={movieTitle}
+          id={movieId}
+          plot={description}
+          backDrop={backDrop}
+          rating={rating}
+          showMovieDetail={(e, movieId) => {
+            this.setMovieId(movieId)
+            this.toggleMovieDetailVisibility(!isMovieDetailVisibile)
+            e.preventDefault()
+          }}
+          showDetailButton={!isMovieDetailVisibile}
+        />
+      );
+    });
     const style = selectedIndex >= 1 
       ? { transform: `translateX(-${selectedIndex * 100}%)` }
       : {};
@@ -131,10 +136,9 @@ class MovieThumbnailList extends Component {
             {renderMovieThumbnail}
           </List>
         </ListWrapper>
-        {/* {renderMovieDetail} */}
         <Collapse height={isMovieDetailVisibile ? this.state.height : 0 }>
-          <div ref={(ele) => { this.movieDetailRef=ele }}>
-            <MovieDetail movieId={movieId} onClose={() => this.toggleMovieDetailVisibility(false)} />
+          <div ref={ele => { this.movieDetailRef = ele }}>
+            {isMovieDetailVisibile && <MovieDetail movieId={movieId} setMovieDetailWrapperHeight={this.setMovieDetailWrapperHeight} onClose={() => this.toggleMovieDetailVisibility(false)} />}
           </div>
         </Collapse>
     </ThumbnailWrapper>
