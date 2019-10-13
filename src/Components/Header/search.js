@@ -15,11 +15,11 @@ class Search extends React.Component{
         })
     }
 
-    throttleCalling = (fn, timeQuantum) => {
+    debounceCalling = (fn, timeQuantum) => {
       return (args)=>{
+        this.called = this.calledBefore;
         this.calledBefore = Date.now(); //
         if(this.called === undefined || this.calledBefore - this.called > timeQuantum){
-          this.called = this.calledBefore;
           fn(args);
         }
       }
@@ -38,7 +38,7 @@ class Search extends React.Component{
 
     render(){
 
-        const searchFetch = this.throttleCalling(this.handleKeyUp, 2000)
+        const searchFetch = this.debounceCalling(this.handleKeyUp, 2000)
         return (
                 <input type="text" className="search" value={this.state.searchTerm} placeholder="Search for an item" onKeyUp={searchFetch} onChange={this.handleChange}/>
         );
