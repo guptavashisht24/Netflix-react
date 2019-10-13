@@ -1,5 +1,4 @@
 import React from 'react';
-import { func } from 'prop-types';
 
 class Search extends React.Component{
     constructor(){
@@ -28,7 +27,7 @@ class Search extends React.Component{
 
 
 
-    handleKeyUp = (e) => {
+    handleKeyUp = () => {
         if(this.state.searchTerm!==""){ //check for when enter key and text field not emoty
             var searchUrl = "search/multi?query=" + this.state.searchTerm + "&api_key=" + this.apiKey;
             this.setState({searchUrl:searchUrl});
