@@ -12,7 +12,7 @@
     "precommit": "lint-staged"
   },
   "lint-staged": {
-    "src/Actions": [
+    "src/**/*.js": [
         "npm run pretty",
         "git add"
     ]
