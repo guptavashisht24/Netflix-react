@@ -27,6 +27,19 @@ export const List = styled.ul`{
   display: flex;
   flex-wrap: nowrap;
   transition: transform 300ms ease-in;
+  &:hover li {
+    // transform: translate3d(-20%,0,0);
+    transform: translateX(-20%);
+  }
+  li {
+    transition: transform 300ms ease-in;
+    &:hover ~ li {
+      transform: translateX(20%);
+    }
+    &:hover {
+      transform: scale(1.5) !important;
+    }
+  }
 }`
 
 export const ListWrapper =  styled.div`{
