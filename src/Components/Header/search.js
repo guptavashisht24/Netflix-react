@@ -38,6 +38,7 @@ class Search extends React.Component{
 
     render(){
 
+
         const searchFetch = this.throttleCalling(this.handleKeyUp, 2000)
         return (
                 <input type="text" className="search" value={this.state.searchTerm} placeholder="Search for an item" onKeyUp={searchFetch} onChange={this.handleChange}/>
